@@ -1,0 +1,120 @@
+:root{
+    --corPrincipal:#001830;
+    --corBanner: #27BD80;
+    --corSecundaria: #002F67;
+}
+body{
+
+    background-color: var(--corPrincipal);
+    margin:0 0 0 0;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: var(--corBanner) ;
+    height: 10vh;
+    top:0;
+}
+
+.logo{
+    margin-left: 2vw;
+    width: 6.5vw;
+    height: 5vh;
+}
+.NomeEFoto{
+    margin-left: auto;
+    display:flex;
+    flex-direction: row;
+    margin-right: 4vw;
+    align-items: center;
+}
+
+.nome{
+    margin-right: 1vw;
+    color: #ffffff;
+}
+
+.iconeSair{
+    width: 2vw;
+    height: 3vh;
+    padding-left: 0.8vw;
+
+}
+
+.iconeSair:hover{
+    scale:1.2
+}
+
+.painelDeFundo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 40vw;
+    height: 90vh;
+}
+
+.publis{
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 10vw;
+    color:var(--corSecundaria);
+    height: 4vh;
+    width: 6vw;
+}
+
+.create{
+    height: 7.5vh;
+    font-size: 20px;
+    font-weight: bold;
+    width: 12vw;
+    background-color: var(--corSecundaria);
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.botoes{
+    width: 100%;
+    height: 5%;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.linha1{
+    margin-top: 5vh;
+    color:var(--corPrincipal)
+}
+
+.post{
+    width: 28vw;
+    height: 20vh;
+    background-color: var(--corSecundaria);
+    border-radius: 12px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+}
+
+.nomePost{
+    color:#ffffff
+}
+.fotoPost{
+    scale:0.8
+}
+.text{
+    color:#ffffff;
+    font-size: 15px;
+}
