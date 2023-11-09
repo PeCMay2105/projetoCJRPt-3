@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!-- Estou reutilizando as mesmas classes da tela de login, antes de dar merge irei colocar nomes mais genericos -->
+
+<head>
+    <title>Página de Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="assets\css\styles.css">
+</head>
+
+<body>
+    <div class="appbar">
+        <button class="button logo-button">
+            <img src="assets\img\LogoCJR.svg" width="60" height="16" alt="Logo CJR">
+        </button>
+        <div class="buttons">
+            <a class="create-account" href="#">Criar Conta</a>
+            <button class="button">Entrar</button>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="assets\img\LOGOCadastro.svg" alt="LogoGrande" width="800" height="300">
+    </div>
+
+    <div class="login-form">
+        <img src="assets\img\UserProfile.svg" alt="Foto de Login" width="200" height="150">
+        <form>
+            <div class="input-icone">
+                <input type="text" placeholder="Email" required style="padding-left: 40px;">
+            </div>
+            <div class="input-icone">
+                <input type="password" placeholder="Senha" required style="padding-left: 40px;">
+            </div>
+            <div class="input-icone">
+                <input type="text" placeholder="Nome" required style="padding-left: 40px;">
+            </div>
+            <div class="input-icone">
+                <input type="text" placeholder="Gênero" required style="padding-left: 40px;">
+            </div>
+            <div class="input-icone">
+                <input type="text" placeholder="Cargo" required style="padding-left: 40px;">
+            </div>
+            <div class="verificacao-conta">
+                <a class="forgot-password-link" href="#"> Já possui conta? Acesso aqui</a>
+            </div>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+</body>
+
+</html>

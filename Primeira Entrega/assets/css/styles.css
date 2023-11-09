@@ -45,13 +45,23 @@ body {
 }
 
 .login-form {
-    margin: 50px auto;
+    margin: 50px 20px 50px auto;
     width: 300px;
     padding: 20px;
     border-radius: 10px;
     background-color: #f2f2f2;
     text-align: center;
     border: 2px solid #23424A;
+    float: right;
+}
+
+.image-container {
+    margin: 50px 20px 50px auto;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    float: left;
+
 }
 
 .login-form .input-icone {
