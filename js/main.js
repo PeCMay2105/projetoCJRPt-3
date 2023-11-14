@@ -7,42 +7,42 @@ posts = [
         "id":"0",
         "nome": "Usuario",
         "foto":"../assets/fotoDefault.png",
-        "texto":"Cjr é top",
+        "texto":"Foca na Cjr",
         "data":"09/10/2023"
     },
     {
         "id":"0",
         "nome": "Usuario",
         "foto":"../assets/fotoDefault.png",
-        "texto":"Cjr é top",
+        "texto":"Foca na Cjr",
         "data":"09/10/2023"
     },
     {
         "id":"0",
         "nome": "Usuario",
         "foto":"../assets/fotoDefault.png",
-        "texto":"Cjr é top",
+        "texto":"Foca na Cjr",
         "data":"09/10/2023"
     },
     {
         "id":"0",
         "nome": "Usuario",
         "foto":"../assets/fotoDefault.png",
-        "texto":"Cjr é top",
+        "texto":"Foca na Cjr",
         "data":"09/10/2023"
     },
     {
         "id":"0",
         "nome": "Usuario",
         "foto":"../assets/fotoDefault.png",
-        "texto":"Cjr é top",
+        "texto":"Foca na Cjr",
         "data":"09/10/2023"
     },
     {
         "id":"0",
         "nome": "Usuario",
         "foto":"../assets/fotoDefault.png",
-        "texto":"Cjr é top",
+        "texto":"Foca na Cjr",
         "data":"09/10/2023"
     },
     {
