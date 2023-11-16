@@ -9,3 +9,23 @@ datasource db {
   provider = "postgresql"
   url      = "file:./database.db"
 }
+
+model Usuario{
+  id  Int @id @default(autoincrement())
+  nome String
+  email String
+  senha String
+  adm Boolean
+  foto blob
+  bio String
+  post Post? @relation(fields: [idPost],references: [id])
+
+}
+
+model Post{
+  id  Int @id @default(autoincrement())
+  texto varchar(250)
+  imagem Boolean
+  conteudoImagem blob
+  usuario Usuario
+}
