@@ -20,6 +20,7 @@ model Usuario{
   foto Bytes
   bio String
   post Post []
+  comentarios Comentario []
 }
 
 model Post{
@@ -29,4 +30,12 @@ model Post{
   imagem Boolean
   conteudoImagem Bytes
   usuario Usuario @relation(fields: [UsuarioId],references: [id])
+}
+
+model Comentario{
+  id Int @id @default(autoincrement())
+  texto String
+  UsuarioId Int
+  usuario Usuario @relation(fields:[UsuarioId],references:[id])
+
 }
