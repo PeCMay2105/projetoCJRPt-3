@@ -14,29 +14,29 @@ body {
     padding: 10px;
 }
 
-.create-account {
+.criar-conta {
     text-decoration: none;
     color: #23424A;
-    margin-right: 10px;
+    margin-right: 0.625rem;
 }
 
-.logo-button {
-    margin-left: 10px;
-    padding: 5px 10px;
+.logo-botao {
+    margin-left: 0.625rem;
+    padding: 0.3125rem 0.625rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 
 }
 
-.buttons {
+.botoes {
     display: flex;
     align-items: center;
 }
 
-.button {
-    margin-left: 10px;
-    padding: 5px 10px;
+.botao {
+    margin-left: 0.625rem;
+    padding: 0.3125rem 0.625rem;
     background-color: #23424A;
     color: #fff;
     border: none;
@@ -44,24 +44,51 @@ body {
     cursor: pointer;
 }
 
-.login-form {
-    margin: 50px 20px 50px auto;
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
+.login-formCadastro .imgftologincadastro {
+    margin-top: -1.563rem;
+    margin-bottom: 1.563rem;
+}
+
+.login-formCadastro {
+    margin: 5vw 2vw 5vw 2vw;
+    width: 22vw;
+    padding: 2vw;
+    border-radius: 1vw;
     background-color: #f2f2f2;
     text-align: center;
     border: 2px solid #23424A;
     float: right;
 }
 
+.login-formCadastro .input-iconeCad input {
+    width: 70%;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
+    border: 1px solid #23424A;
+    border-radius: 5px;
+    background-color: #ECF3FB;
+}
+
+.login-formCadastro .input-iconeCad {
+    margin-bottom: 10px;
+}
+
+
+.login-form {
+    background-color: #f2f2f2;
+    text-align: center;
+    border: 2px solid #23424A;
+    margin: 5vw auto 5vw auto;
+    width: 20vw;
+    padding: 2vw;
+    border-radius: 1vw;
+}
+
 .image-container {
-    margin: 50px 20px 50px auto;
-    width: 300px;
-    padding: 20px;
+    margin: 8vw 1vw 8vw 1vw;
+    padding: 5vw;
     text-align: center;
     float: left;
-
 }
 
 .login-form .input-icone {
@@ -71,15 +98,15 @@ body {
 }
 
 .login-form .input-icone input {
-    padding-left: 30px;
-    background-image: url("assets/img/iconlogin.svg");
+    padding-left: 1.875rem;
+    background-image: url("../img/iconlogin.svg");
     background-repeat: no-repeat;
     background-position: 5px center;
-    background-size: 20px;
+    background-size: 1.25rem;
 }
 
 .login-form .input-icone input[type="password"] {
-    background-image: url("assets/img/iconsenha1.svg");
+    background-image: url("../img/iconsenha1.svg");
 }
 
 .login-form .icon {
@@ -89,15 +116,24 @@ body {
 .login-form input[type="text"],
 .login-form input[type="password"] {
     width: 70%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
     border: 1px solid #23424A;
     border-radius: 5px;
     background-color: #ECF3FB;
 }
 
+.login-formCadastro input[type="submit"] {
+    padding: 0.625rem 1.25rem;
+    background-color: #ECF3FB;
+    color: #23424A;
+    border: 1px solid #23424A;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .login-form input[type="submit"] {
-    padding: 10px 20px;
+    padding: 0.625rem 1.25rem;
     background-color: #ECF3FB;
     color: #23424A;
     border: 1px solid #23424A;
@@ -106,18 +142,21 @@ body {
 }
 
 .login-form img {
-    margin-top: -25px;
-    margin-bottom: 25px;
+    margin-top: -1.563rem;
+    margin-bottom: 1.563rem;
 }
 
-.forgot-password {
-    margin-top: 5px;
-    margin-bottom: 10px;
-
+.esqueci-senha {
+    margin-top: 0.313rem;
+    margin-bottom: 0.625rem;
 }
 
-.forgot-password-link {
+.verificacao-conta {
+    margin-top: 0.313rem;
+    margin-bottom: 0.625rem;
+}
+
+.esqueci-senha-link {
     text-decoration: none;
     color: #23424A;
-
 }
