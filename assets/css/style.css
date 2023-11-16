@@ -1,0 +1,214 @@
+:root {
+    --gap: 3rem; 
+    --primary-color: #001830;
+    --secundary-color: #27BD80;
+    --white-color: #EAEFF2;
+    --white-blue-color: #002F67;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--primary-color);
+    font-size: 2rem;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 6rem;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+h4 {
+    font-size: 4.5rem;
+}
+
+h5 {
+    font-size: 4rem;
+}
+
+h6 {
+    font-size: 3.5rem;
+}
+
+/*
+p {
+    margin-bottom: 3rem;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+}*/
+
+.logo {
+    height: 4rem;
+    width: 9rem;
+    border: none;
+    border-radius: 0.8rem;
+}
+
+.logo img{
+    height: 3rem;
+    width: 7rem;
+}
+
+.login {
+    color: var(--primary-color);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bolder;
+}
+
+.login a {
+    color: var(--primary-color);
+}
+
+.botao_login {
+    height: 4rem;
+    width: 7rem;
+    border: none;
+    border-radius: 0.8rem;
+}
+
+.botao_comentar {
+    height: 4rem;
+    width: 12rem;
+    border: none;
+    border-radius: 1.5rem;
+}
+
+.blue-bg {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.white-blue-bg {
+    background: var(--white-blue-color);
+    color: var(--white-color);
+}
+
+.green-bg {
+    background: var(--secundary-color);
+    color: var(--primary-color);
+}
+
+.white-bg {
+    background: var(--white-color);
+    color: var(--primary-color); 
+}
+
+.main-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    /*padding: 1rem var(--gap);*/
+    min-height: 100vh;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 21rem;
+}
+
+.line {
+    height: 0.2rem;
+    border-bottom: 0.1rem solid black;
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    /*border: 0.1rem solid black;*/
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+.post {
+    padding: 3rem 2rem;
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+}
+
+.info-person {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-person h3, .login h3 {
+    font-size: 1.5rem;
+    color: var(--white-color);
+}
+
+.img-person {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+}
+
+.img-post {
+    padding-top: 2rem;
+    width: 58rem;
+}
+
+.img-person-bar{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.trash {
+    margin-left: auto;
+    padding-right: 2rem;
+}
+
+.vector {
+    padding-left: 7rem;
+    padding-top: 1rem; 
+}
+
+.a-img {
+    display: inline-block;
+}
+
+.a-img img{
+    display: block; /* Garante que a imagem não tenha espaços extras internos ou margens */
+}
+
+.text {
+    padding: 0 7rem; 
+}
+
+.comment {
+    margin: 3rem 2rem;
+    border-radius: 2rem;
+
+}
+
