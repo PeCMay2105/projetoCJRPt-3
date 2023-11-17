@@ -23,6 +23,11 @@ export type Usuario = $Result.DefaultSelection<Prisma.$UsuarioPayload>
  * 
  */
 export type Post = $Result.DefaultSelection<Prisma.$PostPayload>
+/**
+ * Model Comentario
+ * 
+ */
+export type Comentario = $Result.DefaultSelection<Prisma.$ComentarioPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -165,6 +170,16 @@ export class PrismaClient<
     * ```
     */
   get post(): Prisma.PostDelegate<ExtArgs>;
+
+  /**
+   * `prisma.comentario`: Exposes CRUD operations for the **Comentario** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Comentarios
+    * const comentarios = await prisma.comentario.findMany()
+    * ```
+    */
+  get comentario(): Prisma.ComentarioDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -636,7 +651,8 @@ export namespace Prisma {
 
   export const ModelName: {
     Usuario: 'Usuario',
-    Post: 'Post'
+    Post: 'Post',
+    Comentario: 'Comentario'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -653,7 +669,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     meta: {
-      modelProps: 'usuario' | 'post'
+      modelProps: 'usuario' | 'post' | 'comentario'
       txIsolationLevel: Prisma.TransactionIsolationLevel
     },
     model: {
@@ -778,6 +794,68 @@ export namespace Prisma {
           count: {
             args: Prisma.PostCountArgs<ExtArgs>,
             result: $Utils.Optional<PostCountAggregateOutputType> | number
+          }
+        }
+      }
+      Comentario: {
+        payload: Prisma.$ComentarioPayload<ExtArgs>
+        fields: Prisma.ComentarioFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ComentarioFindUniqueArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ComentarioFindUniqueOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload>
+          }
+          findFirst: {
+            args: Prisma.ComentarioFindFirstArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ComentarioFindFirstOrThrowArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload>
+          }
+          findMany: {
+            args: Prisma.ComentarioFindManyArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload>[]
+          }
+          create: {
+            args: Prisma.ComentarioCreateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload>
+          }
+          delete: {
+            args: Prisma.ComentarioDeleteArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload>
+          }
+          update: {
+            args: Prisma.ComentarioUpdateArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload>
+          }
+          deleteMany: {
+            args: Prisma.ComentarioDeleteManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ComentarioUpdateManyArgs<ExtArgs>,
+            result: Prisma.BatchPayload
+          }
+          upsert: {
+            args: Prisma.ComentarioUpsertArgs<ExtArgs>,
+            result: $Utils.PayloadToResult<Prisma.$ComentarioPayload>
+          }
+          aggregate: {
+            args: Prisma.ComentarioAggregateArgs<ExtArgs>,
+            result: $Utils.Optional<AggregateComentario>
+          }
+          groupBy: {
+            args: Prisma.ComentarioGroupByArgs<ExtArgs>,
+            result: $Utils.Optional<ComentarioGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ComentarioCountArgs<ExtArgs>,
+            result: $Utils.Optional<ComentarioCountAggregateOutputType> | number
           }
         }
       }
@@ -931,10 +1009,12 @@ export namespace Prisma {
 
   export type UsuarioCountOutputType = {
     post: number
+    comentarios: number
   }
 
   export type UsuarioCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     post?: boolean | UsuarioCountOutputTypeCountPostArgs
+    comentarios?: boolean | UsuarioCountOutputTypeCountComentariosArgs
   }
 
   // Custom InputTypes
@@ -955,6 +1035,14 @@ export namespace Prisma {
    */
   export type UsuarioCountOutputTypeCountPostArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PostWhereInput
+  }
+
+
+  /**
+   * UsuarioCountOutputType without action
+   */
+  export type UsuarioCountOutputTypeCountComentariosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ComentarioWhereInput
   }
 
 
@@ -1178,6 +1266,7 @@ export namespace Prisma {
     foto?: boolean
     bio?: boolean
     post?: boolean | Usuario$postArgs<ExtArgs>
+    comentarios?: boolean | Usuario$comentariosArgs<ExtArgs>
     _count?: boolean | UsuarioCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["usuario"]>
 
@@ -1193,6 +1282,7 @@ export namespace Prisma {
 
   export type UsuarioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     post?: boolean | Usuario$postArgs<ExtArgs>
+    comentarios?: boolean | Usuario$comentariosArgs<ExtArgs>
     _count?: boolean | UsuarioCountOutputTypeDefaultArgs<ExtArgs>
   }
 
@@ -1201,6 +1291,7 @@ export namespace Prisma {
     name: "Usuario"
     objects: {
       post: Prisma.$PostPayload<ExtArgs>[]
+      comentarios: Prisma.$ComentarioPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -1561,6 +1652,8 @@ export namespace Prisma {
 
     post<T extends Usuario$postArgs<ExtArgs> = {}>(args?: Subset<T, Usuario$postArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, 'findMany'> | Null>;
 
+    comentarios<T extends Usuario$comentariosArgs<ExtArgs> = {}>(args?: Subset<T, Usuario$comentariosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'findMany'> | Null>;
+
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1913,6 +2006,27 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: PostScalarFieldEnum | PostScalarFieldEnum[]
+  }
+
+
+  /**
+   * Usuario.comentarios
+   */
+  export type Usuario$comentariosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    where?: ComentarioWhereInput
+    orderBy?: ComentarioOrderByWithRelationInput | ComentarioOrderByWithRelationInput[]
+    cursor?: ComentarioWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ComentarioScalarFieldEnum | ComentarioScalarFieldEnum[]
   }
 
 
@@ -2861,6 +2975,912 @@ export namespace Prisma {
 
 
   /**
+   * Model Comentario
+   */
+
+  export type AggregateComentario = {
+    _count: ComentarioCountAggregateOutputType | null
+    _avg: ComentarioAvgAggregateOutputType | null
+    _sum: ComentarioSumAggregateOutputType | null
+    _min: ComentarioMinAggregateOutputType | null
+    _max: ComentarioMaxAggregateOutputType | null
+  }
+
+  export type ComentarioAvgAggregateOutputType = {
+    id: number | null
+    UsuarioId: number | null
+  }
+
+  export type ComentarioSumAggregateOutputType = {
+    id: number | null
+    UsuarioId: number | null
+  }
+
+  export type ComentarioMinAggregateOutputType = {
+    id: number | null
+    texto: string | null
+    UsuarioId: number | null
+  }
+
+  export type ComentarioMaxAggregateOutputType = {
+    id: number | null
+    texto: string | null
+    UsuarioId: number | null
+  }
+
+  export type ComentarioCountAggregateOutputType = {
+    id: number
+    texto: number
+    UsuarioId: number
+    _all: number
+  }
+
+
+  export type ComentarioAvgAggregateInputType = {
+    id?: true
+    UsuarioId?: true
+  }
+
+  export type ComentarioSumAggregateInputType = {
+    id?: true
+    UsuarioId?: true
+  }
+
+  export type ComentarioMinAggregateInputType = {
+    id?: true
+    texto?: true
+    UsuarioId?: true
+  }
+
+  export type ComentarioMaxAggregateInputType = {
+    id?: true
+    texto?: true
+    UsuarioId?: true
+  }
+
+  export type ComentarioCountAggregateInputType = {
+    id?: true
+    texto?: true
+    UsuarioId?: true
+    _all?: true
+  }
+
+  export type ComentarioAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Comentario to aggregate.
+     */
+    where?: ComentarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Comentarios to fetch.
+     */
+    orderBy?: ComentarioOrderByWithRelationInput | ComentarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ComentarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Comentarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Comentarios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Comentarios
+    **/
+    _count?: true | ComentarioCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ComentarioAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ComentarioSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ComentarioMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ComentarioMaxAggregateInputType
+  }
+
+  export type GetComentarioAggregateType<T extends ComentarioAggregateArgs> = {
+        [P in keyof T & keyof AggregateComentario]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateComentario[P]>
+      : GetScalarType<T[P], AggregateComentario[P]>
+  }
+
+
+
+
+  export type ComentarioGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ComentarioWhereInput
+    orderBy?: ComentarioOrderByWithAggregationInput | ComentarioOrderByWithAggregationInput[]
+    by: ComentarioScalarFieldEnum[] | ComentarioScalarFieldEnum
+    having?: ComentarioScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ComentarioCountAggregateInputType | true
+    _avg?: ComentarioAvgAggregateInputType
+    _sum?: ComentarioSumAggregateInputType
+    _min?: ComentarioMinAggregateInputType
+    _max?: ComentarioMaxAggregateInputType
+  }
+
+  export type ComentarioGroupByOutputType = {
+    id: number
+    texto: string
+    UsuarioId: number
+    _count: ComentarioCountAggregateOutputType | null
+    _avg: ComentarioAvgAggregateOutputType | null
+    _sum: ComentarioSumAggregateOutputType | null
+    _min: ComentarioMinAggregateOutputType | null
+    _max: ComentarioMaxAggregateOutputType | null
+  }
+
+  type GetComentarioGroupByPayload<T extends ComentarioGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ComentarioGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ComentarioGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ComentarioGroupByOutputType[P]>
+            : GetScalarType<T[P], ComentarioGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ComentarioSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    texto?: boolean
+    UsuarioId?: boolean
+    usuario?: boolean | UsuarioDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["comentario"]>
+
+  export type ComentarioSelectScalar = {
+    id?: boolean
+    texto?: boolean
+    UsuarioId?: boolean
+  }
+
+  export type ComentarioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    usuario?: boolean | UsuarioDefaultArgs<ExtArgs>
+  }
+
+
+  export type $ComentarioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Comentario"
+    objects: {
+      usuario: Prisma.$UsuarioPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      texto: string
+      UsuarioId: number
+    }, ExtArgs["result"]["comentario"]>
+    composites: {}
+  }
+
+
+  type ComentarioGetPayload<S extends boolean | null | undefined | ComentarioDefaultArgs> = $Result.GetResult<Prisma.$ComentarioPayload, S>
+
+  type ComentarioCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<ComentarioFindManyArgs, 'select' | 'include' | 'distinct' > & {
+      select?: ComentarioCountAggregateInputType | true
+    }
+
+  export interface ComentarioDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Comentario'], meta: { name: 'Comentario' } }
+    /**
+     * Find zero or one Comentario that matches the filter.
+     * @param {ComentarioFindUniqueArgs} args - Arguments to find a Comentario
+     * @example
+     * // Get one Comentario
+     * const comentario = await prisma.comentario.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUnique<T extends ComentarioFindUniqueArgs<ExtArgs>>(
+      args: SelectSubset<T, ComentarioFindUniqueArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
+
+    /**
+     * Find one Comentario that matches the filter or throw an error  with `error.code='P2025'` 
+     *     if no matches were found.
+     * @param {ComentarioFindUniqueOrThrowArgs} args - Arguments to find a Comentario
+     * @example
+     * // Get one Comentario
+     * const comentario = await prisma.comentario.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findUniqueOrThrow<T extends ComentarioFindUniqueOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, ComentarioFindUniqueOrThrowArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'findUniqueOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find the first Comentario that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ComentarioFindFirstArgs} args - Arguments to find a Comentario
+     * @example
+     * // Get one Comentario
+     * const comentario = await prisma.comentario.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirst<T extends ComentarioFindFirstArgs<ExtArgs>>(
+      args?: SelectSubset<T, ComentarioFindFirstArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'findFirst'> | null, null, ExtArgs>
+
+    /**
+     * Find the first Comentario that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ComentarioFindFirstOrThrowArgs} args - Arguments to find a Comentario
+     * @example
+     * // Get one Comentario
+     * const comentario = await prisma.comentario.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+    **/
+    findFirstOrThrow<T extends ComentarioFindFirstOrThrowArgs<ExtArgs>>(
+      args?: SelectSubset<T, ComentarioFindFirstOrThrowArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'findFirstOrThrow'>, never, ExtArgs>
+
+    /**
+     * Find zero or more Comentarios that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ComentarioFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Comentarios
+     * const comentarios = await prisma.comentario.findMany()
+     * 
+     * // Get first 10 Comentarios
+     * const comentarios = await prisma.comentario.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const comentarioWithIdOnly = await prisma.comentario.findMany({ select: { id: true } })
+     * 
+    **/
+    findMany<T extends ComentarioFindManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, ComentarioFindManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'findMany'>>
+
+    /**
+     * Create a Comentario.
+     * @param {ComentarioCreateArgs} args - Arguments to create a Comentario.
+     * @example
+     * // Create one Comentario
+     * const Comentario = await prisma.comentario.create({
+     *   data: {
+     *     // ... data to create a Comentario
+     *   }
+     * })
+     * 
+    **/
+    create<T extends ComentarioCreateArgs<ExtArgs>>(
+      args: SelectSubset<T, ComentarioCreateArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
+
+    /**
+     * Delete a Comentario.
+     * @param {ComentarioDeleteArgs} args - Arguments to delete one Comentario.
+     * @example
+     * // Delete one Comentario
+     * const Comentario = await prisma.comentario.delete({
+     *   where: {
+     *     // ... filter to delete one Comentario
+     *   }
+     * })
+     * 
+    **/
+    delete<T extends ComentarioDeleteArgs<ExtArgs>>(
+      args: SelectSubset<T, ComentarioDeleteArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'delete'>, never, ExtArgs>
+
+    /**
+     * Update one Comentario.
+     * @param {ComentarioUpdateArgs} args - Arguments to update one Comentario.
+     * @example
+     * // Update one Comentario
+     * const comentario = await prisma.comentario.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    update<T extends ComentarioUpdateArgs<ExtArgs>>(
+      args: SelectSubset<T, ComentarioUpdateArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'update'>, never, ExtArgs>
+
+    /**
+     * Delete zero or more Comentarios.
+     * @param {ComentarioDeleteManyArgs} args - Arguments to filter Comentarios to delete.
+     * @example
+     * // Delete a few Comentarios
+     * const { count } = await prisma.comentario.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+    **/
+    deleteMany<T extends ComentarioDeleteManyArgs<ExtArgs>>(
+      args?: SelectSubset<T, ComentarioDeleteManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Comentarios.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ComentarioUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Comentarios
+     * const comentario = await prisma.comentario.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+    **/
+    updateMany<T extends ComentarioUpdateManyArgs<ExtArgs>>(
+      args: SelectSubset<T, ComentarioUpdateManyArgs<ExtArgs>>
+    ): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Comentario.
+     * @param {ComentarioUpsertArgs} args - Arguments to update or create a Comentario.
+     * @example
+     * // Update or create a Comentario
+     * const comentario = await prisma.comentario.upsert({
+     *   create: {
+     *     // ... data to create a Comentario
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Comentario we want to update
+     *   }
+     * })
+    **/
+    upsert<T extends ComentarioUpsertArgs<ExtArgs>>(
+      args: SelectSubset<T, ComentarioUpsertArgs<ExtArgs>>
+    ): Prisma__ComentarioClient<$Result.GetResult<Prisma.$ComentarioPayload<ExtArgs>, T, 'upsert'>, never, ExtArgs>
+
+    /**
+     * Count the number of Comentarios.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ComentarioCountArgs} args - Arguments to filter Comentarios to count.
+     * @example
+     * // Count the number of Comentarios
+     * const count = await prisma.comentario.count({
+     *   where: {
+     *     // ... the filter for the Comentarios we want to count
+     *   }
+     * })
+    **/
+    count<T extends ComentarioCountArgs>(
+      args?: Subset<T, ComentarioCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ComentarioCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Comentario.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ComentarioAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ComentarioAggregateArgs>(args: Subset<T, ComentarioAggregateArgs>): Prisma.PrismaPromise<GetComentarioAggregateType<T>>
+
+    /**
+     * Group by Comentario.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ComentarioGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ComentarioGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ComentarioGroupByArgs['orderBy'] }
+        : { orderBy?: ComentarioGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ComentarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetComentarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Comentario model
+   */
+  readonly fields: ComentarioFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Comentario.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ComentarioClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: 'PrismaPromise';
+
+    usuario<T extends UsuarioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UsuarioDefaultArgs<ExtArgs>>): Prisma__UsuarioClient<$Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, 'findUniqueOrThrow'> | Null, Null, ExtArgs>;
+
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>;
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>;
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>;
+  }
+
+
+
+  /**
+   * Fields of the Comentario model
+   */ 
+  interface ComentarioFieldRefs {
+    readonly id: FieldRef<"Comentario", 'Int'>
+    readonly texto: FieldRef<"Comentario", 'String'>
+    readonly UsuarioId: FieldRef<"Comentario", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+
+  /**
+   * Comentario findUnique
+   */
+  export type ComentarioFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Comentario to fetch.
+     */
+    where: ComentarioWhereUniqueInput
+  }
+
+
+  /**
+   * Comentario findUniqueOrThrow
+   */
+  export type ComentarioFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Comentario to fetch.
+     */
+    where: ComentarioWhereUniqueInput
+  }
+
+
+  /**
+   * Comentario findFirst
+   */
+  export type ComentarioFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Comentario to fetch.
+     */
+    where?: ComentarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Comentarios to fetch.
+     */
+    orderBy?: ComentarioOrderByWithRelationInput | ComentarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Comentarios.
+     */
+    cursor?: ComentarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Comentarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Comentarios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Comentarios.
+     */
+    distinct?: ComentarioScalarFieldEnum | ComentarioScalarFieldEnum[]
+  }
+
+
+  /**
+   * Comentario findFirstOrThrow
+   */
+  export type ComentarioFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Comentario to fetch.
+     */
+    where?: ComentarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Comentarios to fetch.
+     */
+    orderBy?: ComentarioOrderByWithRelationInput | ComentarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Comentarios.
+     */
+    cursor?: ComentarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Comentarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Comentarios.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Comentarios.
+     */
+    distinct?: ComentarioScalarFieldEnum | ComentarioScalarFieldEnum[]
+  }
+
+
+  /**
+   * Comentario findMany
+   */
+  export type ComentarioFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * Filter, which Comentarios to fetch.
+     */
+    where?: ComentarioWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Comentarios to fetch.
+     */
+    orderBy?: ComentarioOrderByWithRelationInput | ComentarioOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Comentarios.
+     */
+    cursor?: ComentarioWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Comentarios from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Comentarios.
+     */
+    skip?: number
+    distinct?: ComentarioScalarFieldEnum | ComentarioScalarFieldEnum[]
+  }
+
+
+  /**
+   * Comentario create
+   */
+  export type ComentarioCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Comentario.
+     */
+    data: XOR<ComentarioCreateInput, ComentarioUncheckedCreateInput>
+  }
+
+
+  /**
+   * Comentario update
+   */
+  export type ComentarioUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Comentario.
+     */
+    data: XOR<ComentarioUpdateInput, ComentarioUncheckedUpdateInput>
+    /**
+     * Choose, which Comentario to update.
+     */
+    where: ComentarioWhereUniqueInput
+  }
+
+
+  /**
+   * Comentario updateMany
+   */
+  export type ComentarioUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Comentarios.
+     */
+    data: XOR<ComentarioUpdateManyMutationInput, ComentarioUncheckedUpdateManyInput>
+    /**
+     * Filter which Comentarios to update
+     */
+    where?: ComentarioWhereInput
+  }
+
+
+  /**
+   * Comentario upsert
+   */
+  export type ComentarioUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Comentario to update in case it exists.
+     */
+    where: ComentarioWhereUniqueInput
+    /**
+     * In case the Comentario found by the `where` argument doesn't exist, create a new Comentario with this data.
+     */
+    create: XOR<ComentarioCreateInput, ComentarioUncheckedCreateInput>
+    /**
+     * In case the Comentario was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ComentarioUpdateInput, ComentarioUncheckedUpdateInput>
+  }
+
+
+  /**
+   * Comentario delete
+   */
+  export type ComentarioDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+    /**
+     * Filter which Comentario to delete.
+     */
+    where: ComentarioWhereUniqueInput
+  }
+
+
+  /**
+   * Comentario deleteMany
+   */
+  export type ComentarioDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Comentarios to delete
+     */
+    where?: ComentarioWhereInput
+  }
+
+
+  /**
+   * Comentario without action
+   */
+  export type ComentarioDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Comentario
+     */
+    select?: ComentarioSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well.
+     */
+    include?: ComentarioInclude<ExtArgs> | null
+  }
+
+
+
+  /**
    * Enums
    */
 
@@ -2893,6 +3913,15 @@ export namespace Prisma {
   };
 
   export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
+
+
+  export const ComentarioScalarFieldEnum: {
+    id: 'id',
+    texto: 'texto',
+    UsuarioId: 'UsuarioId'
+  };
+
+  export type ComentarioScalarFieldEnum = (typeof ComentarioScalarFieldEnum)[keyof typeof ComentarioScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -2958,6 +3987,7 @@ export namespace Prisma {
     foto?: BytesFilter<"Usuario"> | Buffer
     bio?: StringFilter<"Usuario"> | string
     post?: PostListRelationFilter
+    comentarios?: ComentarioListRelationFilter
   }
 
   export type UsuarioOrderByWithRelationInput = {
@@ -2969,6 +3999,7 @@ export namespace Prisma {
     foto?: SortOrder
     bio?: SortOrder
     post?: PostOrderByRelationAggregateInput
+    comentarios?: ComentarioOrderByRelationAggregateInput
   }
 
   export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
@@ -2983,6 +4014,7 @@ export namespace Prisma {
     foto?: BytesFilter<"Usuario"> | Buffer
     bio?: StringFilter<"Usuario"> | string
     post?: PostListRelationFilter
+    comentarios?: ComentarioListRelationFilter
   }, "id">
 
   export type UsuarioOrderByWithAggregationInput = {
@@ -3070,6 +4102,53 @@ export namespace Prisma {
     conteudoImagem?: BytesWithAggregatesFilter<"Post"> | Buffer
   }
 
+  export type ComentarioWhereInput = {
+    AND?: ComentarioWhereInput | ComentarioWhereInput[]
+    OR?: ComentarioWhereInput[]
+    NOT?: ComentarioWhereInput | ComentarioWhereInput[]
+    id?: IntFilter<"Comentario"> | number
+    texto?: StringFilter<"Comentario"> | string
+    UsuarioId?: IntFilter<"Comentario"> | number
+    usuario?: XOR<UsuarioRelationFilter, UsuarioWhereInput>
+  }
+
+  export type ComentarioOrderByWithRelationInput = {
+    id?: SortOrder
+    texto?: SortOrder
+    UsuarioId?: SortOrder
+    usuario?: UsuarioOrderByWithRelationInput
+  }
+
+  export type ComentarioWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: ComentarioWhereInput | ComentarioWhereInput[]
+    OR?: ComentarioWhereInput[]
+    NOT?: ComentarioWhereInput | ComentarioWhereInput[]
+    texto?: StringFilter<"Comentario"> | string
+    UsuarioId?: IntFilter<"Comentario"> | number
+    usuario?: XOR<UsuarioRelationFilter, UsuarioWhereInput>
+  }, "id">
+
+  export type ComentarioOrderByWithAggregationInput = {
+    id?: SortOrder
+    texto?: SortOrder
+    UsuarioId?: SortOrder
+    _count?: ComentarioCountOrderByAggregateInput
+    _avg?: ComentarioAvgOrderByAggregateInput
+    _max?: ComentarioMaxOrderByAggregateInput
+    _min?: ComentarioMinOrderByAggregateInput
+    _sum?: ComentarioSumOrderByAggregateInput
+  }
+
+  export type ComentarioScalarWhereWithAggregatesInput = {
+    AND?: ComentarioScalarWhereWithAggregatesInput | ComentarioScalarWhereWithAggregatesInput[]
+    OR?: ComentarioScalarWhereWithAggregatesInput[]
+    NOT?: ComentarioScalarWhereWithAggregatesInput | ComentarioScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Comentario"> | number
+    texto?: StringWithAggregatesFilter<"Comentario"> | string
+    UsuarioId?: IntWithAggregatesFilter<"Comentario"> | number
+  }
+
   export type UsuarioCreateInput = {
     nome: string
     email: string
@@ -3078,6 +4157,7 @@ export namespace Prisma {
     foto: Buffer
     bio: string
     post?: PostCreateNestedManyWithoutUsuarioInput
+    comentarios?: ComentarioCreateNestedManyWithoutUsuarioInput
   }
 
   export type UsuarioUncheckedCreateInput = {
@@ -3089,6 +4169,7 @@ export namespace Prisma {
     foto: Buffer
     bio: string
     post?: PostUncheckedCreateNestedManyWithoutUsuarioInput
+    comentarios?: ComentarioUncheckedCreateNestedManyWithoutUsuarioInput
   }
 
   export type UsuarioUpdateInput = {
@@ -3099,6 +4180,7 @@ export namespace Prisma {
     foto?: BytesFieldUpdateOperationsInput | Buffer
     bio?: StringFieldUpdateOperationsInput | string
     post?: PostUpdateManyWithoutUsuarioNestedInput
+    comentarios?: ComentarioUpdateManyWithoutUsuarioNestedInput
   }
 
   export type UsuarioUncheckedUpdateInput = {
@@ -3110,6 +4192,7 @@ export namespace Prisma {
     foto?: BytesFieldUpdateOperationsInput | Buffer
     bio?: StringFieldUpdateOperationsInput | string
     post?: PostUncheckedUpdateManyWithoutUsuarioNestedInput
+    comentarios?: ComentarioUncheckedUpdateManyWithoutUsuarioNestedInput
   }
 
   export type UsuarioUpdateManyMutationInput = {
@@ -3175,6 +4258,38 @@ export namespace Prisma {
     conteudoImagem?: BytesFieldUpdateOperationsInput | Buffer
   }
 
+  export type ComentarioCreateInput = {
+    texto: string
+    usuario: UsuarioCreateNestedOneWithoutComentariosInput
+  }
+
+  export type ComentarioUncheckedCreateInput = {
+    id?: number
+    texto: string
+    UsuarioId: number
+  }
+
+  export type ComentarioUpdateInput = {
+    texto?: StringFieldUpdateOperationsInput | string
+    usuario?: UsuarioUpdateOneRequiredWithoutComentariosNestedInput
+  }
+
+  export type ComentarioUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    texto?: StringFieldUpdateOperationsInput | string
+    UsuarioId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ComentarioUpdateManyMutationInput = {
+    texto?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ComentarioUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    texto?: StringFieldUpdateOperationsInput | string
+    UsuarioId?: IntFieldUpdateOperationsInput | number
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -3218,7 +4333,17 @@ export namespace Prisma {
     none?: PostWhereInput
   }
 
+  export type ComentarioListRelationFilter = {
+    every?: ComentarioWhereInput
+    some?: ComentarioWhereInput
+    none?: ComentarioWhereInput
+  }
+
   export type PostOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ComentarioOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -3350,16 +4475,56 @@ export namespace Prisma {
     UsuarioId?: SortOrder
   }
 
+  export type ComentarioCountOrderByAggregateInput = {
+    id?: SortOrder
+    texto?: SortOrder
+    UsuarioId?: SortOrder
+  }
+
+  export type ComentarioAvgOrderByAggregateInput = {
+    id?: SortOrder
+    UsuarioId?: SortOrder
+  }
+
+  export type ComentarioMaxOrderByAggregateInput = {
+    id?: SortOrder
+    texto?: SortOrder
+    UsuarioId?: SortOrder
+  }
+
+  export type ComentarioMinOrderByAggregateInput = {
+    id?: SortOrder
+    texto?: SortOrder
+    UsuarioId?: SortOrder
+  }
+
+  export type ComentarioSumOrderByAggregateInput = {
+    id?: SortOrder
+    UsuarioId?: SortOrder
+  }
+
   export type PostCreateNestedManyWithoutUsuarioInput = {
     create?: XOR<PostCreateWithoutUsuarioInput, PostUncheckedCreateWithoutUsuarioInput> | PostCreateWithoutUsuarioInput[] | PostUncheckedCreateWithoutUsuarioInput[]
     connectOrCreate?: PostCreateOrConnectWithoutUsuarioInput | PostCreateOrConnectWithoutUsuarioInput[]
     connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
   }
 
+  export type ComentarioCreateNestedManyWithoutUsuarioInput = {
+    create?: XOR<ComentarioCreateWithoutUsuarioInput, ComentarioUncheckedCreateWithoutUsuarioInput> | ComentarioCreateWithoutUsuarioInput[] | ComentarioUncheckedCreateWithoutUsuarioInput[]
+    connectOrCreate?: ComentarioCreateOrConnectWithoutUsuarioInput | ComentarioCreateOrConnectWithoutUsuarioInput[]
+    connect?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+  }
+
   export type PostUncheckedCreateNestedManyWithoutUsuarioInput = {
     create?: XOR<PostCreateWithoutUsuarioInput, PostUncheckedCreateWithoutUsuarioInput> | PostCreateWithoutUsuarioInput[] | PostUncheckedCreateWithoutUsuarioInput[]
     connectOrCreate?: PostCreateOrConnectWithoutUsuarioInput | PostCreateOrConnectWithoutUsuarioInput[]
     connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
+  }
+
+  export type ComentarioUncheckedCreateNestedManyWithoutUsuarioInput = {
+    create?: XOR<ComentarioCreateWithoutUsuarioInput, ComentarioUncheckedCreateWithoutUsuarioInput> | ComentarioCreateWithoutUsuarioInput[] | ComentarioUncheckedCreateWithoutUsuarioInput[]
+    connectOrCreate?: ComentarioCreateOrConnectWithoutUsuarioInput | ComentarioCreateOrConnectWithoutUsuarioInput[]
+    connect?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -3387,6 +4552,19 @@ export namespace Prisma {
     deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
   }
 
+  export type ComentarioUpdateManyWithoutUsuarioNestedInput = {
+    create?: XOR<ComentarioCreateWithoutUsuarioInput, ComentarioUncheckedCreateWithoutUsuarioInput> | ComentarioCreateWithoutUsuarioInput[] | ComentarioUncheckedCreateWithoutUsuarioInput[]
+    connectOrCreate?: ComentarioCreateOrConnectWithoutUsuarioInput | ComentarioCreateOrConnectWithoutUsuarioInput[]
+    upsert?: ComentarioUpsertWithWhereUniqueWithoutUsuarioInput | ComentarioUpsertWithWhereUniqueWithoutUsuarioInput[]
+    set?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    disconnect?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    delete?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    connect?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    update?: ComentarioUpdateWithWhereUniqueWithoutUsuarioInput | ComentarioUpdateWithWhereUniqueWithoutUsuarioInput[]
+    updateMany?: ComentarioUpdateManyWithWhereWithoutUsuarioInput | ComentarioUpdateManyWithWhereWithoutUsuarioInput[]
+    deleteMany?: ComentarioScalarWhereInput | ComentarioScalarWhereInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
@@ -3408,6 +4586,19 @@ export namespace Prisma {
     deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
   }
 
+  export type ComentarioUncheckedUpdateManyWithoutUsuarioNestedInput = {
+    create?: XOR<ComentarioCreateWithoutUsuarioInput, ComentarioUncheckedCreateWithoutUsuarioInput> | ComentarioCreateWithoutUsuarioInput[] | ComentarioUncheckedCreateWithoutUsuarioInput[]
+    connectOrCreate?: ComentarioCreateOrConnectWithoutUsuarioInput | ComentarioCreateOrConnectWithoutUsuarioInput[]
+    upsert?: ComentarioUpsertWithWhereUniqueWithoutUsuarioInput | ComentarioUpsertWithWhereUniqueWithoutUsuarioInput[]
+    set?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    disconnect?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    delete?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    connect?: ComentarioWhereUniqueInput | ComentarioWhereUniqueInput[]
+    update?: ComentarioUpdateWithWhereUniqueWithoutUsuarioInput | ComentarioUpdateWithWhereUniqueWithoutUsuarioInput[]
+    updateMany?: ComentarioUpdateManyWithWhereWithoutUsuarioInput | ComentarioUpdateManyWithWhereWithoutUsuarioInput[]
+    deleteMany?: ComentarioScalarWhereInput | ComentarioScalarWhereInput[]
+  }
+
   export type UsuarioCreateNestedOneWithoutPostInput = {
     create?: XOR<UsuarioCreateWithoutPostInput, UsuarioUncheckedCreateWithoutPostInput>
     connectOrCreate?: UsuarioCreateOrConnectWithoutPostInput
@@ -3420,6 +4611,20 @@ export namespace Prisma {
     upsert?: UsuarioUpsertWithoutPostInput
     connect?: UsuarioWhereUniqueInput
     update?: XOR<XOR<UsuarioUpdateToOneWithWhereWithoutPostInput, UsuarioUpdateWithoutPostInput>, UsuarioUncheckedUpdateWithoutPostInput>
+  }
+
+  export type UsuarioCreateNestedOneWithoutComentariosInput = {
+    create?: XOR<UsuarioCreateWithoutComentariosInput, UsuarioUncheckedCreateWithoutComentariosInput>
+    connectOrCreate?: UsuarioCreateOrConnectWithoutComentariosInput
+    connect?: UsuarioWhereUniqueInput
+  }
+
+  export type UsuarioUpdateOneRequiredWithoutComentariosNestedInput = {
+    create?: XOR<UsuarioCreateWithoutComentariosInput, UsuarioUncheckedCreateWithoutComentariosInput>
+    connectOrCreate?: UsuarioCreateOrConnectWithoutComentariosInput
+    upsert?: UsuarioUpsertWithoutComentariosInput
+    connect?: UsuarioWhereUniqueInput
+    update?: XOR<XOR<UsuarioUpdateToOneWithWhereWithoutComentariosInput, UsuarioUpdateWithoutComentariosInput>, UsuarioUncheckedUpdateWithoutComentariosInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3539,6 +4744,20 @@ export namespace Prisma {
     create: XOR<PostCreateWithoutUsuarioInput, PostUncheckedCreateWithoutUsuarioInput>
   }
 
+  export type ComentarioCreateWithoutUsuarioInput = {
+    texto: string
+  }
+
+  export type ComentarioUncheckedCreateWithoutUsuarioInput = {
+    id?: number
+    texto: string
+  }
+
+  export type ComentarioCreateOrConnectWithoutUsuarioInput = {
+    where: ComentarioWhereUniqueInput
+    create: XOR<ComentarioCreateWithoutUsuarioInput, ComentarioUncheckedCreateWithoutUsuarioInput>
+  }
+
   export type PostUpsertWithWhereUniqueWithoutUsuarioInput = {
     where: PostWhereUniqueInput
     update: XOR<PostUpdateWithoutUsuarioInput, PostUncheckedUpdateWithoutUsuarioInput>
@@ -3566,6 +4785,31 @@ export namespace Prisma {
     conteudoImagem?: BytesFilter<"Post"> | Buffer
   }
 
+  export type ComentarioUpsertWithWhereUniqueWithoutUsuarioInput = {
+    where: ComentarioWhereUniqueInput
+    update: XOR<ComentarioUpdateWithoutUsuarioInput, ComentarioUncheckedUpdateWithoutUsuarioInput>
+    create: XOR<ComentarioCreateWithoutUsuarioInput, ComentarioUncheckedCreateWithoutUsuarioInput>
+  }
+
+  export type ComentarioUpdateWithWhereUniqueWithoutUsuarioInput = {
+    where: ComentarioWhereUniqueInput
+    data: XOR<ComentarioUpdateWithoutUsuarioInput, ComentarioUncheckedUpdateWithoutUsuarioInput>
+  }
+
+  export type ComentarioUpdateManyWithWhereWithoutUsuarioInput = {
+    where: ComentarioScalarWhereInput
+    data: XOR<ComentarioUpdateManyMutationInput, ComentarioUncheckedUpdateManyWithoutUsuarioInput>
+  }
+
+  export type ComentarioScalarWhereInput = {
+    AND?: ComentarioScalarWhereInput | ComentarioScalarWhereInput[]
+    OR?: ComentarioScalarWhereInput[]
+    NOT?: ComentarioScalarWhereInput | ComentarioScalarWhereInput[]
+    id?: IntFilter<"Comentario"> | number
+    texto?: StringFilter<"Comentario"> | string
+    UsuarioId?: IntFilter<"Comentario"> | number
+  }
+
   export type UsuarioCreateWithoutPostInput = {
     nome: string
     email: string
@@ -3573,6 +4817,7 @@ export namespace Prisma {
     adm: boolean
     foto: Buffer
     bio: string
+    comentarios?: ComentarioCreateNestedManyWithoutUsuarioInput
   }
 
   export type UsuarioUncheckedCreateWithoutPostInput = {
@@ -3583,6 +4828,7 @@ export namespace Prisma {
     adm: boolean
     foto: Buffer
     bio: string
+    comentarios?: ComentarioUncheckedCreateNestedManyWithoutUsuarioInput
   }
 
   export type UsuarioCreateOrConnectWithoutPostInput = {
@@ -3608,6 +4854,7 @@ export namespace Prisma {
     adm?: BoolFieldUpdateOperationsInput | boolean
     foto?: BytesFieldUpdateOperationsInput | Buffer
     bio?: StringFieldUpdateOperationsInput | string
+    comentarios?: ComentarioUpdateManyWithoutUsuarioNestedInput
   }
 
   export type UsuarioUncheckedUpdateWithoutPostInput = {
@@ -3618,6 +4865,65 @@ export namespace Prisma {
     adm?: BoolFieldUpdateOperationsInput | boolean
     foto?: BytesFieldUpdateOperationsInput | Buffer
     bio?: StringFieldUpdateOperationsInput | string
+    comentarios?: ComentarioUncheckedUpdateManyWithoutUsuarioNestedInput
+  }
+
+  export type UsuarioCreateWithoutComentariosInput = {
+    nome: string
+    email: string
+    senha: string
+    adm: boolean
+    foto: Buffer
+    bio: string
+    post?: PostCreateNestedManyWithoutUsuarioInput
+  }
+
+  export type UsuarioUncheckedCreateWithoutComentariosInput = {
+    id?: number
+    nome: string
+    email: string
+    senha: string
+    adm: boolean
+    foto: Buffer
+    bio: string
+    post?: PostUncheckedCreateNestedManyWithoutUsuarioInput
+  }
+
+  export type UsuarioCreateOrConnectWithoutComentariosInput = {
+    where: UsuarioWhereUniqueInput
+    create: XOR<UsuarioCreateWithoutComentariosInput, UsuarioUncheckedCreateWithoutComentariosInput>
+  }
+
+  export type UsuarioUpsertWithoutComentariosInput = {
+    update: XOR<UsuarioUpdateWithoutComentariosInput, UsuarioUncheckedUpdateWithoutComentariosInput>
+    create: XOR<UsuarioCreateWithoutComentariosInput, UsuarioUncheckedCreateWithoutComentariosInput>
+    where?: UsuarioWhereInput
+  }
+
+  export type UsuarioUpdateToOneWithWhereWithoutComentariosInput = {
+    where?: UsuarioWhereInput
+    data: XOR<UsuarioUpdateWithoutComentariosInput, UsuarioUncheckedUpdateWithoutComentariosInput>
+  }
+
+  export type UsuarioUpdateWithoutComentariosInput = {
+    nome?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
+    adm?: BoolFieldUpdateOperationsInput | boolean
+    foto?: BytesFieldUpdateOperationsInput | Buffer
+    bio?: StringFieldUpdateOperationsInput | string
+    post?: PostUpdateManyWithoutUsuarioNestedInput
+  }
+
+  export type UsuarioUncheckedUpdateWithoutComentariosInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nome?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    senha?: StringFieldUpdateOperationsInput | string
+    adm?: BoolFieldUpdateOperationsInput | boolean
+    foto?: BytesFieldUpdateOperationsInput | Buffer
+    bio?: StringFieldUpdateOperationsInput | string
+    post?: PostUncheckedUpdateManyWithoutUsuarioNestedInput
   }
 
   export type PostUpdateWithoutUsuarioInput = {
@@ -3640,6 +4946,20 @@ export namespace Prisma {
     conteudoImagem?: BytesFieldUpdateOperationsInput | Buffer
   }
 
+  export type ComentarioUpdateWithoutUsuarioInput = {
+    texto?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ComentarioUncheckedUpdateWithoutUsuarioInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    texto?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ComentarioUncheckedUpdateManyWithoutUsuarioInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    texto?: StringFieldUpdateOperationsInput | string
+  }
+
 
 
   /**
@@ -3657,6 +4977,10 @@ export namespace Prisma {
      * @deprecated Use PostDefaultArgs instead
      */
     export type PostArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = PostDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use ComentarioDefaultArgs instead
+     */
+    export type ComentarioArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ComentarioDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

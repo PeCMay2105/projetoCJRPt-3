@@ -122,6 +122,12 @@ exports.Prisma.PostScalarFieldEnum = {
   conteudoImagem: 'conteudoImagem'
 };
 
+exports.Prisma.ComentarioScalarFieldEnum = {
+  id: 'id',
+  texto: 'texto',
+  UsuarioId: 'UsuarioId'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -130,7 +136,8 @@ exports.Prisma.SortOrder = {
 
 exports.Prisma.ModelName = {
   Usuario: 'Usuario',
-  Post: 'Post'
+  Post: 'Post',
+  Comentario: 'Comentario'
 };
 
 /**
