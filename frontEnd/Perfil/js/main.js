@@ -16,7 +16,7 @@ areaPosts = document.getElementById("areaPosts")
 console.log(areaPosts)
 posts = [
     {
-        "id": "0",
+        "id": "0", 
         "nome": "Usuario",
         "foto": "./assets/img/fotoDefault.png",
         "texto": "Texto longo de uma branca classe média alta sobre meritocracia",

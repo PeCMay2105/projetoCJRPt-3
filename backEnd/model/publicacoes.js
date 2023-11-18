@@ -1,22 +1,11 @@
-import { Post } from "./Post.js"
-import { Usuario } from "./Usuario.js"
+import { PrismaClient }  from '@prisma/client';
+const prisma = new PrismaClient();
 
- export class publicacoes{
+
+export class publicacoes{
     usuarios = []
     posts = []
-    novoUsuario(Nome,email,senha,foto,bio){
-
-        const criaUsuario = ()=>{
-            if(this.usuarios[email]){
-                throw new Error("Já existe um usuario cadastrado para esse email")
-            }
-            else{
-                NovoUsuario = new Usuario(Nome,email,senha,foto,bio)
-                this.usuarios[email] = NovoUsuario
-                return novoUsuario
-            }
-        }
-    }
+    
 
     novoPost(usuario,texto,temImg,imagem){
         const criaPost = ()=>{
@@ -25,9 +14,7 @@ import { Usuario } from "./Usuario.js"
 
     }
 
-    listaUsuarios(){
-        return usuarios
-    }
+    
     listaPosts(){
         return posts
     }
