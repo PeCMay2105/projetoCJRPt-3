@@ -1,164 +1,203 @@
 :root {
-    --corPrincipal: #001830;
-    --corBanner: #27BD80;
-    --corSecundaria: #002F67;
+    --gap: 3rem;
+    --primary-color: #001830;
+    --secundary-color: #27BD80;
+    --white-color: #EAEFF2;
+    --white-blue-color: #002F67;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--corPrincipal);
-    margin: 0 0 0 0;
+    background: var(--primary-color);
+    font-size: 2rem;
+    line-height: 1.5;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-}
-
-.appbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--corBanner);
-    height: 7vh;
-    top: 0;
+a {
+    text-decoration: none;
 }
 
 .logo {
-    margin-left: 2vw;
-    width: 6.5vw;
-    height: 5vh;
-}
-
-.NomeEFoto {
-    margin-left: auto;
-    display: flex;
-    flex-direction: row;
-    margin-right: 4vw;
-    align-items: center;
-}
-
-.criar-conta {
-    text-decoration: none;
-    color: #23424A;
-    margin-right: 0.625rem;
-}
-
-.botao {
-    margin-left: 0.625rem;
-    padding: 0.3125rem 0.625rem;
-    background-color: #23424A;
-    color: #fff;
+    height: 4rem;
+    width: 9rem;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 0.8rem;
 }
 
-.painelDeFundo {
-    display: grid;
-    flex-direction: column;
-    align-items: flex-start;
-    background: linear-gradient(to bottom, #002F67 15%, #ffffff -50%);
-    width: 40vw;
-    padding: 10px;
+.logo img {
+    height: 3rem;
+    width: 7rem;
+}
+
+.login {
+    color: var(--primary-color);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: bolder;
+}
+
+.login a {
+    color: var(--primary-color);
+}
+
+.botao_login {
+    height: 4rem;
+    width: 7rem;
+    border: none;
+    border-radius: 0.8rem;
+}
+
+.botao_editar_perfil,
+.botao_criar_post {
+    height: 4rem;
+    width: 12rem;
+    border: none;
+    border-radius: 1.5rem;
+    display: block;
+    margin-bottom: 10px;
+
+}
+
+.botao_editar_perfil {
+    margin-top: 100px;
+}
+
+.blue-bg {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+.white-blue-bg {
+    background: var(--white-blue-color);
+    color: var(--white-color);
+}
+
+.green-bg {
+    background: var(--secundary-color);
+    color: var(--primary-color);
+}
+
+.white-bg {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
+.main-content {
+    max-width: 80rem;
+    margin: 0 auto;
     min-height: 100vh;
 }
 
-.publis {
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 33.5vw;
-    color: var(--corSecundaria);
-    width: 6vw;
-    margin-top: -20px;
-    margin-bottom: -60px;
-}
-
-.nome_usuario {
-    font-size: 25px;
-    color: var(--corSecundaria);
-    margin-bottom: -20px;
-}
-
-.create {
-    height: 7.5vh;
-    font-size: 20px;
-    font-weight: bold;
-    width: 12vw;
-    background-color: var(--corSecundaria);
-    color: #ffffff;
-    border-radius: 20px;
-}
-
-.botoes {
-    width: 100%;
-    height: 5%;
-    margin-top: 2vh;
+.menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem 21rem;
+}
+
+.line {
+    height: 0.2rem;
+    border-bottom: 0.1rem solid black;
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem;
+    background: linear-gradient(to bottom, #002F67 45%, #ffffff -50%);
 
 }
 
 .post {
-    margin-top: 1px;
-    margin-bottom: 15px;
-    width: calc(100% - 20px);
-    height: 20vh;
-    background-color: var(--corSecundaria);
-    border-radius: 12px;
-    padding: 10px;
+    padding: 3rem 2rem;
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
 }
 
-.texto {
-    font-size: 15px;
-    padding: 5px;
-}
-
-.data {
+.info-person {
     display: flex;
-    align-items: self-start;
-    font-size: 10px;
-    padding: 5px;
-
-}
-
-.box {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: end;
+    gap: 1rem;
 }
 
-.nomePost {
-    color: #ffffff
+.info-person h3,
+.login h3 {
+    font-size: 1.5rem;
+    color: var(--white-color);
 }
 
-/* .fotoPost {
-    scale: 0.8
-} */
-.text {
-    display: flex;
-    justify-content: left;
-    color: #ffffff;
-
+.img-person {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
 }
 
-.data {
+.img-post {
+    padding-top: 2rem;
+    width: 58rem;
+}
+
+.img-person-bar {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}
+
+.trash {
     margin-left: auto;
-    padding: 0.1px;
+    padding-right: 2rem;
 }
 
-/* .editar {
-    margin-left: 1.2vw;
+.vector {
+    padding-left: 7rem;
+    padding-top: 1rem;
+    cursor: pointer;
 }
 
-.comentario:hover {
-    scale: 1.2;
+.a-img {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
 }
 
-.editar:hover {
-    scale: 1.2;
-} */
+.a-img img {
+    display: block;
+    /* Garante que a imagem não tenha espaços extras internos ou margens */
+}
+
+.text {
+    padding: 0 7rem;
+}
+
+.comment {
+    margin: 3rem 2rem;
+    border-radius: 2rem;
+
+}
+
+.button-img {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.perfil-info {
+    display: grid;
+    align-items: center;
+}
 
 .foto_usuario {
     border-radius: 50%;
@@ -169,51 +208,68 @@ main {
 
 }
 
-.cargo,
-.email {
-    font-size: 20px;
-    color: var(--corSecundaria);
-    margin-bottom: 5px;
-}
-
-.linha1 {
-    margin-top: 0vh;
-    border: 1px solid var(--corPrincipal);
-    margin-bottom: 0vh;
-}
-
-.perfil-info {
-    display: grid;
-    align-items: center;
-}
-
 .detalhes-usu {
     flex-direction: column;
     margin-left: 5px;
 }
 
-.user-icons {
-    align-items: center;
+.nome_usuario {
+    font-size: 25px;
+    color: #002F67;
     margin-bottom: -20px;
-
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    margin-bottom: -20px;
-
-}
-
-.icon-info {
-    display: flex;
-    align-items: center;
-    margin-bottom: -20px;
-
 }
 
 .usuario-info {
     flex-direction: column;
     margin-top: 5px;
+}
+
+.icon-info {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    margin-bottom: -20px;
+
+}
+
+.icon1 {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: -30px;
+
+}
+
+.icon2 {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: -18px;
+
+}
+
+.linha1 {
+    margin-top: 0vh;
+    border: 1px solid #001830;
+    margin-bottom: 0vh;
+}
+
+.cargo {
+    font-size: 20px;
+    color: #002F67;
+    margin-bottom: -5px;
+    margin-top: 25px;
+
+}
+
+.email {
+    font-size: 20px;
+    color: #002F67;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+.publis {
+    margin-left: 1vw;
+    margin-bottom: -1vw;
 }
