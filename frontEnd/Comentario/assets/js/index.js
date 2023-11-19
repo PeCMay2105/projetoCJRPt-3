@@ -1,17 +1,4 @@
-// -----------------------------------------------------------------------------
-//  Quando tiver os dados já no banco de dados alterar os meus campos do html/css
-// const usuario = {
-//     nome: "Fulano de Tal",
-//     foto: "./caminho/para/foto.jpg",
-//     cargo: "Desenvolvedor",
-//     email: "fulano@example.com"
-//   };
-//   document.querySelector(".foto_usuario").src = usuario.foto;
-//   document.querySelector(".nome_usuario").textContent = usuario.nome;
-//   document.querySelector(".cargo").textContent = usuario.cargo;
-//   document.querySelector(".email").textContent = usuario.email;
-// -----------------------------------------------------------------  
-areaPosts = document.getElementById("areaPosts")
+ areaPosts = document.getElementById("areaPosts")
 
 posts = [
     {
@@ -36,7 +23,7 @@ posts = [
 ]
 
 posts.forEach(objeto => {
-    if (objeto.flag === "2"){
+    if (objeto.flag === "2") {
         areaPosts.innerHTML += `
         <div class="comment post white-blue-bg">
             <div class="info-person">
@@ -49,7 +36,7 @@ posts.forEach(objeto => {
                 <img class="img-post" src="${objeto.fotoPost}" alt="imagem da postagem">
             </div>
         </div>`;
-    }else{
+    } else {
         areaPosts.innerHTML += `
         <div class="comment post white-blue-bg">
             <div class="info-person">
@@ -67,15 +54,48 @@ posts.forEach(objeto => {
             </div>
 
             <div class="vector">
-                <a href="" class="a-img"><img src="assets/img/Vector.svg" alt="icone de editar"></a>
+                <button type="button" class="button-img" id="open-modal">
+                    <img src="assets/img/Vector.svg" alt="Ícone de editar">
+                </button> 
             </div>
 
         </div>`
     }
-    
-
-    // Auto ajuste da altura do painel de fundo 
-    //const novoConteudoHeight = areaPosts.clientHeight; // altura do novo post adicionado
-    //areaPosts.style.minHeight = `${novoConteudoHeight}px`;
 });
 
+const opemModal = document.querySelectorAll(".button-img");
+const closeModal = document.querySelector("#close-modal");
+const modal = document.querySelector("#modal");
+const fade = document.querySelector("#fade");
+
+var simplemde = new SimpleMDE({ element: document.getElementById("editorMarkdown") });
+
+const toggleModal = () => {
+    [modal, fade].forEach((el) => el.classList.toggle("hide"))
+
+};
+
+[closeModal, fade].forEach((el) => {
+    el.addEventListener("click", () => toggleModal());
+
+});
+
+opemModal.forEach((el) => {
+    el.addEventListener("click", () => toggleModal());
+
+});
+
+function enviarPost() {
+    const conteudoMarkdown = simplemde.value();
+
+    console.log('Post enviado com sucesso');
+
+    // Renderiza o conteúdo Markdown para HTML
+    var md = window.markdownit();
+    var result = md.render(conteudoMarkdown);
+
+    const elementoDoModal = document.getElementById('text');
+
+    // Defina o conteúdo desse elemento como o conteúdo renderizado
+    elementoDoModal.innerHTML = result;
+} 

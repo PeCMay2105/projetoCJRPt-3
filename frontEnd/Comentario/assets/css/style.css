@@ -27,33 +27,6 @@ a {
     text-decoration: none;
 }
 
-h1 {
-    font-size: 6rem;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-size: 6rem;
-    margin-bottom: 5rem;
-    text-transform: uppercase;
-    line-height: 1.2;
-}
-
-h3 {
-    font-size: 5rem;
-}
-
-h4 {
-    font-size: 4.5rem;
-}
-
-h5 {
-    font-size: 4rem;
-}
-
-h6 {
-    font-size: 3.5rem;
-}
 
 /*
 p {
@@ -191,11 +164,14 @@ p {
 
 .vector {
     padding-left: 7rem;
-    padding-top: 1rem; 
+    padding-top: 1rem;
+    cursor: pointer;
 }
 
 .a-img {
     display: inline-block;
+    position: relative;
+    z-index: 20;
 }
 
 .a-img img{
@@ -211,4 +187,11 @@ p {
     border-radius: 2rem;
 
 }
+
+.button-img {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 
