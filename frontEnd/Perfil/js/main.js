@@ -16,6 +16,7 @@ areaPosts = document.getElementById("areaPosts")
 
 posts = [
     {
+<<<<<<< HEAD:Segunda Entrega/js/main.js
         "id": "0",
         "flag": "1",
         "nome": "Fulano",
@@ -23,6 +24,13 @@ posts = [
         "fotoPost": "./assets/img/R.jpg",
         "texto": "Mirai Nikki é melhor, mas a abertura de evangelion é boa",
         "data": "19/11/2023"
+=======
+        "id": "0", 
+        "nome": "Usuario",
+        "foto": "./assets/img/fotoDefault.png",
+        "texto": "Texto longo de uma branca classe média alta sobre meritocracia",
+        "data": "16/11/2023"
+>>>>>>> teste_joao:frontEnd/Perfil/js/main.js
     },
     {
         "id": "0",

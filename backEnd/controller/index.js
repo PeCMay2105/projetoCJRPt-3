@@ -1,22 +1,19 @@
+//import { publicacoes } from "../model/publicacoes.js";
+import { Usuario } from "../model/Usuario.js"
+import { Router } from "express";
 
-import app from "../server/app.js";
-import { Post } from "../model/Post.js";
-import { publicacoes } from "../model/publicacoes.js";
+const router = Router();
 
-let pubs = new publicacoes()
+let user = new Usuario()
+//let pubs = new publicacoes()
 const postsExistentes = pubs.posts
 
-
-app.listen(3000,()=>{
-    console.log("servidor estutando na porta 3000")
-})
-
-app.post("/newUser",(req,res)=>{
+router.post("/newUser",async (req,res)=>{
     console.log("rota funcionando")
     const {Nome,email,senha,foto} = req.body;
     try{
-        const user = pubs.novoUsuario(Nome,email,senha,foto)
-        res.status(201).json(user)
+        const newUser = await user.novoUsuario(Nome,email,senha,foto)
+        res.status(201).json(newUser)
     }
     catch(e){
         console.log(e)
@@ -25,7 +22,23 @@ app.post("/newUser",(req,res)=>{
 
 })
 
-app.post("/newPost",(req,res)=>{
+router.get("/usuarios", async (req,res)=>{
+    const usuarios = await user.listaUsuarios
+    res.status(200).json(usuarios)
+})
+
+router.delete("/deleteuser/:id", async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const message = await user.removerUsuario(id);
+        res.status(200).json({ message });
+    } catch (err) {
+        res.status(400).json({ erro: err.message });
+    }
+})
+/*
+router.post("/newPost",(req,res)=>{
 
     const {usuario,texto,temFoto,foto} = req.body
     try{
@@ -38,8 +51,5 @@ app.post("/newPost",(req,res)=>{
 
     }
 })
-
-app.get("/usuarios", (req,res)=>{
-    const usuarios = pubs.listaUsuarios
-    res.status(200).json(usuarios)
-})
+*/
+export default router;
