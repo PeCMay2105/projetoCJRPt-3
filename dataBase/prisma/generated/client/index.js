@@ -130,7 +130,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\User\\Desktop\\DataBase-pt3\\dataBase\\prisma\\generated\\client",
+      "value": "C:\\Users\\Usuario\\Desktop\\backEndpt3\\dataBase\\prisma\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -147,8 +147,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../..",
   "clientVersion": "5.6.0",
@@ -157,6 +156,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -165,8 +165,9 @@ const config = {
       }
     }
   },
-  "inlineSchema": "Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwKLy8gbGVhcm4gbW9yZSBhYm91dCBpdCBpbiB0aGUgZG9jczogaHR0cHM6Ly9wcmlzLmx5L2QvcHJpc21hLXNjaGVtYQoKZ2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgICA9ICIuL2dlbmVyYXRlZC9jbGllbnQiCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gInNxbGl0ZSIKICB1cmwgICAgICA9ICJmaWxlOi4vZGF0YWJhc2UuZGIiCn0KCm1vZGVsIFVzdWFyaW97CiAgaWQgIEludCBAaWQgQGRlZmF1bHQoYXV0b2luY3JlbWVudCgpKQogIG5vbWUgU3RyaW5nCiAgZW1haWwgU3RyaW5nCiAgc2VuaGEgU3RyaW5nCiAgYWRtIEJvb2xlYW4KICBmb3RvIEJ5dGVzCiAgYmlvIFN0cmluZwogIHBvc3QgUG9zdCBbXQogIGNvbWVudGFyaW9zIENvbWVudGFyaW8gW10KfQoKbW9kZWwgUG9zdHsKICBpZCAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpCiAgdGV4dG8gU3RyaW5nCiAgVXN1YXJpb0lkIEludAogIGltYWdlbSBCb29sZWFuCiAgY29udGV1ZG9JbWFnZW0gQnl0ZXMKICB1c3VhcmlvIFVzdWFyaW8gQHJlbGF0aW9uKGZpZWxkczogW1VzdWFyaW9JZF0scmVmZXJlbmNlczogW2lkXSkKfQoKbW9kZWwgQ29tZW50YXJpb3sKICBpZCBJbnQgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkKICB0ZXh0byBTdHJpbmcKICBVc3VhcmlvSWQgSW50CiAgdXN1YXJpbyBVc3VhcmlvIEByZWxhdGlvbihmaWVsZHM6W1VzdWFyaW9JZF0scmVmZXJlbmNlczpbaWRdKQoKfQ==",
-  "inlineSchemaHash": "c642e3725720a6881b8cb0c8124c492a24df9653f61fdca6801e00f4a8b410b1"
+  "inlineSchema": "Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwNCi8vIGxlYXJuIG1vcmUgYWJvdXQgaXQgaW4gdGhlIGRvY3M6IGh0dHBzOi8vcHJpcy5seS9kL3ByaXNtYS1zY2hlbWENCg0KZ2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogIG91dHB1dCAgID0gIi4vZ2VuZXJhdGVkL2NsaWVudCINCn0NCg0KZGF0YXNvdXJjZSBkYiB7DQogIHByb3ZpZGVyID0gInNxbGl0ZSINCiAgdXJsICAgICAgPSAiZmlsZTouL2RhdGFiYXNlLmRiIg0KfQ0KDQptb2RlbCBVc3Vhcmlvew0KICBpZCAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIG5vbWUgU3RyaW5nDQogIGVtYWlsIFN0cmluZw0KICBzZW5oYSBTdHJpbmcNCiAgYWRtIEJvb2xlYW4NCiAgZm90byBCeXRlcw0KICBiaW8gU3RyaW5nDQogIHBvc3QgUG9zdCBbXQ0KICBjb21lbnRhcmlvcyBDb21lbnRhcmlvIFtdDQp9DQoNCm1vZGVsIFBvc3R7DQogIGlkICBJbnQgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgdGV4dG8gU3RyaW5nDQogIFVzdWFyaW9JZCBJbnQNCiAgaW1hZ2VtIEJvb2xlYW4NCiAgY29udGV1ZG9JbWFnZW0gQnl0ZXMNCiAgdXN1YXJpbyBVc3VhcmlvIEByZWxhdGlvbihmaWVsZHM6IFtVc3VhcmlvSWRdLHJlZmVyZW5jZXM6IFtpZF0pDQp9DQoNCm1vZGVsIENvbWVudGFyaW97DQogIGlkIEludCBAaWQgQGRlZmF1bHQoYXV0b2luY3JlbWVudCgpKQ0KICB0ZXh0byBTdHJpbmcNCiAgVXN1YXJpb0lkIEludA0KICB1c3VhcmlvIFVzdWFyaW8gQHJlbGF0aW9uKGZpZWxkczpbVXN1YXJpb0lkXSxyZWZlcmVuY2VzOltpZF0pDQoNCn0=",
+  "inlineSchemaHash": "4fd6d41f2ce4379eb43d798e070eb933188a729adbb42cb884f8921cf9f9f52f",
+  "noEngine": false
 }
 
 const fs = require('fs')
@@ -174,8 +175,8 @@ const fs = require('fs')
 config.dirname = __dirname
 if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   const alternativePaths = [
-    "prisma/generated/client",
     "generated/client",
+    "client",
   ]
   
   const alternativePath = alternativePaths.find((altPath) => {
@@ -204,7 +205,7 @@ Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
-path.join(process.cwd(), "prisma/generated/client/query_engine-windows.dll.node")
+path.join(process.cwd(), "generated/client/query_engine-windows.dll.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "prisma/generated/client/schema.prisma")
+path.join(process.cwd(), "generated/client/schema.prisma")

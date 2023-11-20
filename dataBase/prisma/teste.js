@@ -1,6 +1,6 @@
 import {PrismaClient} from "@prisma/client"
-
 const prisma = new PrismaClient()
+
 
 // função de criar post recebe um usuario, um conteudo para o post, o booleano que indica se tem imagem associada e a imagem
 async function NewPost(usuario,texto,temImg,img){
@@ -26,3 +26,5 @@ async function NewUser(Nome,email,senha,adm,foto,bio){
         }
     })
 }
+
+export default prisma;
