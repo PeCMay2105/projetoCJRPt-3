@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Reutilizei o layout do joão pois estava com dificuldade de implementar os icones nos meus posts -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/modal.css">
+    <title>Comentarios</title>
+</head>
+
+<body>
+    <nav class="menu green-bg">
+        <button class="logo"><img src="./assets/img/Logo CJRlogo.svg" alt="Logo da CJR"></button>
+        <div class="login">
+            <h3 class="nome_usuario">Fulano de Tal</h3>
+            <a href="" class="a-img"><img class="img-person-bar" src="./assets/img/shinji.jpg" alt="foto de perfil"></a>
+            <a href="" class="a-img"><img class="img-logOut" src="./assets/img/log-out.svg" alt="icone de log-out"></a>
+        </div>
+    </nav>
+
+    <section class="main-content white-bg" id="areaPosts">
+
+        <div class="barra">
+            <div class="painelDeFundo" id="areaPosts">
+                <div class="perfil-info">
+                    <img src="./assets/img/shinji.jpg" class="foto_usuario">
+                    <div class="detalhes-usu">
+                        <h1 class="nome_usuario">Fulano de Tal</h1>
+                        <div class="usuario-info">
+                            <div class="icon-info">
+                                <img src="./assets/img/vectoricon.png" alt="Ícone de cargo" class="icon1">
+                                <p class="cargo">Cargo</p>
+                            </div>
+                            <div class="icon-info">
+                                <img src="./assets/img/emailicon.png" alt="Ícone de email" class="icon2">
+                                <p class="email">email@example.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <p>
+                <a href=""><button class="botao_editar_perfil white-blue-bg">Editar Perfil</button></a>
+                <a href=""><button class="botao_criar_post white-blue-bg">Criar Post</button></a>
+        </div>
+
+        <div class="line"></div>
+        <hr width="100%" class="linha1">
+        <h1 class="publis"> Publicações</h1>
+    </section>
+
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide white-blue-bg">
+        <div id="modal-body">
+            <textarea id="editorMarkdown"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button id="close-modal">Fechar</button>
+            <button id="postComment" onclick="enviarPost()">Publicar</button>
+        </div>
+    </div>
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js
+    "></script>
+
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
