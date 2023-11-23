@@ -1,0 +1,11 @@
+{
+  "name": "pt3",
+  "version": "1.0.0",
+  "description": "pasta local para projeto trainee",
+  "main": "dataBase/controllers/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

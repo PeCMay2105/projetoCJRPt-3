@@ -3,13 +3,12 @@ const prisma = new PrismaClient();
 
 
 export class publicacoes{
-    usuarios = []
-    posts = []
+
     
 
-    novoPost(usuario,texto,temImg,imagem){
+    novoPost(usuario,texto,temImg,imagem,UsuarioId){
         const criaPost = ()=>{
-            posts.push(new Post(usuario,texto,temImg,imagem))
+            posts.push(new Post(usuario,texto,UsuarioId,temImg,imagem))
         }
 
     }

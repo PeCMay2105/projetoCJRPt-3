@@ -1,0 +1,195 @@
+:root{
+    --corPrincipal:#001830;
+    --corBanner: #27BD80;
+    --corSecundaria: #002F67;
+}
+body{
+
+    background-color: var(--corPrincipal);
+    margin:0 0 0 0;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: var(--corBanner) ;
+    height: 10vh;
+    top:0;
+}
+
+.logo{
+    margin-left: 2vw;
+    width: 6.5vw;
+    height: 5vh;
+}
+.NomeEFoto{
+    margin-left: auto;
+    display:flex;
+    flex-direction: row;
+    margin-right: 4vw;
+    align-items: center;
+}
+
+.nome{
+    margin-right: 1vw;
+    color: #ffffff;
+}
+
+
+.criarConta{
+    font-size: 16px;
+    font-weight: 700;
+    color:#FFFFFF;
+    margin-right: 1.5vw;
+}
+.criarConta:hover{
+    scale: 1.09;
+}
+
+
+.criarConta:active{
+    scale:1.0
+}
+
+.iconeSair{
+    width: 2vw;
+    height: 3vh;
+    padding-left: 0.8vw;
+
+}
+
+.botaoEntrar{
+    border-radius: 13px;
+    border:inherit;
+    width:6vw;
+    height:6vh;
+    background-color: var(--corPrincipal);
+    font-size: 16px;
+    font-weight:700;
+    color: #ffffff;
+}
+
+.botaoEntrar:hover{
+    scale: 1.09;
+}
+.botaoEntrar:active{
+    scale:1;
+}
+.iconeSair:hover{
+    scale:1.2
+}
+
+.painelDeFundo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 40vw;
+    height: 200vh;}
+
+.publis{
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 10vw;
+    color:var(--corSecundaria);
+    height: 4vh;
+    width: 6vw;
+}
+
+.create{
+    height: 7.5vh;
+    font-size: 20px;
+    font-weight: bold;
+    width: 12vw;
+    background-color: var(--corSecundaria);
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.botoes{
+    width: 100%;
+    height: 5%;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.linha1{
+    margin-top: 5vh;
+    color:var(--corPrincipal)
+}
+
+.post{
+    margin-top: 15px;
+    width: 28vw;
+    height: 20vh;
+    background-color: var(--corSecundaria);
+    border-radius: 12px;
+}
+
+.texto{
+    font-size: 15px;
+    padding: 5px;
+}
+
+.data{
+    display: flex;
+    align-items:self-start;
+    font-size: 10px;
+    padding:5px;
+    
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:end;
+}
+
+.nomePost{
+    color:#ffffff
+}
+.fotoPost{
+    scale:0.8
+}
+.text{
+    display: flex;
+    justify-content:left;
+    color:#ffffff;
+
+}
+
+.data{
+    margin-left: auto;
+    padding: 0.1px;
+}
+
+.icones{
+    margin-right: auto;
+    margin-left: 7vw;
+    display: flex;
+    width: 1.5vw;
+    height: 1.5vh;
+}
+.comentario{
+    
+}
+.editar{
+    margin-left: 1.2vw;
+}
+.comentario:hover{
+    scale:1.2;
+}
+.editar:hover
+{
+    scale:1.2;
+}
