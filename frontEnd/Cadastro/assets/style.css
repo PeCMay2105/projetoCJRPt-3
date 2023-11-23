@@ -1,0 +1,167 @@
+:root {
+    --corPrincipal: #001830;
+    --corBanner: #27BD80;
+    --corSecundaria: #002F67;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--corSecundaria);
+}
+
+.appbar {
+    background-color: var(--corBanner);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.criar-conta {
+    text-decoration: none;
+    color: #23424A;
+    margin-right: 0.625rem;
+}
+
+.logo {
+    cursor: pointer;
+    margin-left: 2vw;
+    width: 6.5vw;
+    height: 5vh;
+
+}
+
+/* .botoes {
+    display: flex;
+    align-items: center;
+} */
+
+.botao {
+    margin-left: 0.625rem;
+    padding: 0.3125rem 0.625rem;
+    background-color: #23424A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-formCadastro .imgftologincadastro {
+    margin-top: -1.563rem;
+    margin-bottom: 1.563rem;
+}
+
+.login-formCadastro {
+    margin: 5vw 2vw 5vw 2vw;
+    width: 22vw;
+    padding: 2vw;
+    border-radius: 1vw;
+    background-color: #f2f2f2;
+    text-align: center;
+    border: 2px solid #23424A;
+    float: right;
+}
+
+.login-formCadastro .input-iconeCad input {
+    width: 70%;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
+    border: 1px solid #23424A;
+    border-radius: 5px;
+    background-color: #ECF3FB;
+}
+
+.login-formCadastro .input-iconeCad {
+    margin-bottom: 10px;
+}
+
+
+.login-form {
+    background-color: #f2f2f2;
+    text-align: center;
+    border: 2px solid #23424A;
+    margin: 5vw auto 5vw auto;
+    width: 20vw;
+    padding: 2vw;
+    border-radius: 1vw;
+}
+
+.image-container {
+    margin: 8vw 1vw 8vw 1vw;
+    padding: 5vw;
+    text-align: center;
+    float: left;
+}
+
+.login-form .input-icone {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login-form .input-icone input {
+    padding-left: 1.875rem;
+    background-image: url("./img/iconlogin.svg");
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 1.25rem;
+}
+
+.login-form .input-icone input[type="password"] {
+    background-image: url("./img/iconsenha1.svg");
+}
+
+.login-form .icon {
+    display: none;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 70%;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
+    border: 1px solid #23424A;
+    border-radius: 5px;
+    background-color: #ECF3FB;
+}
+
+.login-formCadastro input[type="submit"] {
+    padding: 0.625rem 1.25rem;
+    background-color: #ECF3FB;
+    color: #23424A;
+    border: 1px solid #23424A;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form input[type="submit"] {
+    padding: 0.625rem 1.25rem;
+    background-color: #ECF3FB;
+    color: #23424A;
+    border: 1px solid #23424A;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form img {
+    margin-top: -1.563rem;
+    margin-bottom: 1.563rem;
+}
+
+.esqueci-senha {
+    margin-top: 0.313rem;
+    margin-bottom: 0.625rem;
+}
+
+.verificacao-conta {
+    margin-top: 0.313rem;
+    margin-bottom: 0.625rem;
+}
+
+.esqueci-senha-link {
+    text-decoration: none;
+    color: #23424A;
+}
