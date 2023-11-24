@@ -2,23 +2,28 @@
 <html>
 
 <head>
-    <title>Página de Cadastro</title>
-    <link rel="stylesheet" type="text/css" href="assets\style.css">
+    <title>Página de Editar Perfil</title>
+    <link rel="stylesheet" type="text/css" href="../Cadastro/assets/style.css">
+    <!-- <link rel="stylesheet" href="../Perfil/assets/style.css"> -->
+    <!-- <link rel="stylesheet" href="../Perfil/assets/modal.css"> -->
 </head>
 
 <body>
     <div class="appbar">
         <div class="nomeLogo">
-            <img src="./assets/img/logoCjr2.png" class="logo">
+            <img src="../Cadastro/assets/img/logoCjr2.png" class="logo">
         </div>
         <div class="NomeEFoto">
-            <a class="criar-conta " href="#">Criar Conta</a>
-            <button class="botao">Entrar</button>
+            <a class="editar-perfil-name" href="#">Fulano</a>
+            <a href="" class="a-img"><img id="imagemPerfil1" class="img-person-bar"
+                    src="../Cadastro/assets/img/UserProfile.svg" alt="foto de perfil"></a>
+            <a href="" class="a-img"><img class="img-logOut" src="../Perfil/assets/img/log-out.svg"
+                    alt="icone de log-out"></a>
         </div>
     </div>
 
     <div class="image-container">
-        <img src="assets\img\LOGOCadastro.svg" alt="LogoGrande" width="700" height="300">
+        <img src="../Cadastro/assets/img/LOGOCadastro.svg" alt="LogoGrande" width="700" height="300">
     </div>
 
     <div class="login-formCadastro">
@@ -27,7 +32,6 @@
                 alt="Foto de Login" width="220" height="170">
             <input type="file" id="seletorDeArquivo" style="display: none;">
         </div>
-        <!-- <img class="imgftologincadastro" src="assets\img\UserProfile.svg" alt="Foto de Login" width="220" height="170"> -->
         <form>
             <div class="input-iconeCad">
                 <input type="text" placeholder="Email" required style="padding-left: 60px;">
@@ -44,10 +48,7 @@
             <div class="input-iconeCad">
                 <input type="text" placeholder="Cargo" required style="padding-left: 60px;">
             </div>
-            <div class="verificacao-conta">
-                <a class="esqueci-senha-link" href="#"> Já possui conta? Acesse aqui </a>
-            </div>
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Atualizar">
         </form>
     </div>
     <script src="

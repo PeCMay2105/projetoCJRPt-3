@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--corSecundaria);
@@ -25,6 +25,15 @@ body {
     color: #23424A;
     margin-right: 0.625rem;
 }
+
+.editar-perfil-name {
+    text-decoration: none;
+    color: #23424A;
+    z-index: 21;
+    margin-top: -10px !important;
+
+}
+
 
 .logo {
     cursor: pointer;
@@ -198,4 +207,48 @@ body {
 .esqueci-senha-link {
     text-decoration: none;
     color: #23424A;
+}
+
+.imagemPerfilContainer {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 1.563rem;
+
+}
+
+.imagemPerfilContainer img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 50%;
+
+}
+
+
+/* teste */
+.a-img {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+}
+
+.a-img img {
+    display: block;
+    /* Garante que a imagem não tenha espaços extras internos ou margens */
+}
+
+.img-person {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.img-person-bar {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
 }
