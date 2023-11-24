@@ -16,10 +16,10 @@ app.post("/novoUsuario",(req,res)=>{
     res.send(201).json(result)
 })
 
-app.post("newPost",(req,res)=>{
-    const {usuarioMail,texto,temImg,imagem,UsuarioId} = req.body
+app.post("/newPost",(req,res)=>{
+    const {usuarioMail,texto,temImg,imagem} = req.body
     try{
-        const post = controladorDePost.novoPost(usuarioMail,texto,temImg,imagem,UsuarioId)
+        const post = controladorDePost.novoPost(usuarioMail,texto,temImg,imagem)
         res.send(201).json(post)
     }catch(error){
         console.log(error)

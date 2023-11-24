@@ -6,21 +6,25 @@ const Client = new PrismaClient()
 export class postControllers{
 
 
-    async novoPost(usuarioMail,texto,temImg,imagem,UsuarioId){
-        User = await Client.Usuario.findUnique({
+    async novoPost(usuarioMail,texto,temImg,imagem){
+        const User = await Client.Usuario.findUnique({
             where:{
                 email: usuarioMail
             }
         })
-        const post = new Post(usuarioMail,texto,temImg,imagem,UsuarioId)
-        const newPost = await Client.Post.create({
-            data:{
+        console.log("id do usuario: ")
+        console.log(User.id)
+        const post = new Post(usuarioMail,texto,temImg,imagem)
+        const newPost = await Client.Usuario.update({
+            where:{
+                id:User.id
+            },
+            Post:{
                 texto:post.texto,
-                usuario:user,
-                UsuarioId:post.UsuarioId,
+                usuario:User,
                 imagem:temImg,
                 conteudoImagem:imagem,
-                usuarioId:user.id
+                UsuarioId:User.id
             }
         })
         return newPost
