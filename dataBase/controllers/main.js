@@ -30,8 +30,8 @@ app.post("/newPost",(req,res)=>{
 app.post("/newComment",(req,res)=>{
     const {texto,postId} = req.body
     try{
-        const post = controladorDeComment.novoComentario(texto,postId)
-        res.send(201).json(post)
+        const comment = controladorDeComment.novoComentario(texto,postId)
+        res.send(201).json(comment)
     }catch(error){
         console.log(error)
     }

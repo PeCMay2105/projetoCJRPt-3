@@ -7,15 +7,16 @@ export class comentarioControllers{
 
 
     async novoComentario(texto,id){
+        console.log(id)
         const Post = await Client.Post.findUnique({
             where:{
-                "postId": id
+                "id": id
             }
         })
-        const comentario = await Client.Post.create({
+        const comentario = await Client.Comentario.create({
             data:{
                 texto:texto,
-                postId:Post.id
+                PostId:Post.id
             }
         })
         return comentario
