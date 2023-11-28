@@ -2,10 +2,11 @@ import express from "express"
 import app from "../../backEnd/server/app.js"
 import { UsuarioController } from "./usuarioControllers.js"
 import { postControllers } from "./postsControllers.js"
+import { comentarioControllers } from "./comentarioControllers.js"
 
 const controladorDeUsuario = new UsuarioController()
 const controladorDePost = new postControllers()
-
+const controladorDeComment = new comentarioControllers()
 app.listen(3000,()=>{
     console.log("servidor estutando na porta 3000")
 })
@@ -17,9 +18,19 @@ app.post("/novoUsuario",(req,res)=>{
 })
 
 app.post("/newPost",(req,res)=>{
-    const {usuarioMail,texto,temImg,imagem} = req.body
+    const {usuarioMail,texto,temImg} = req.body
     try{
-        const post = controladorDePost.novoPost(usuarioMail,texto,temImg,imagem)
+        const post = controladorDePost.novoPost(usuarioMail,texto,temImg)
+        res.send(201).json(post)
+    }catch(error){
+        console.log(error)
+    }
+})
+
+app.post("/newComment",(req,res)=>{
+    const {texto,postId} = req.body
+    try{
+        const post = controladorDeComment.novoComentario(texto,postId)
         res.send(201).json(post)
     }catch(error){
         console.log(error)

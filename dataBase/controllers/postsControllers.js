@@ -9,21 +9,17 @@ export class postControllers{
     async novoPost(usuarioMail,texto,temImg,imagem){
         const User = await Client.Usuario.findUnique({
             where:{
-                email: usuarioMail
+                "email": usuarioMail
             }
         })
         console.log("id do usuario: ")
         console.log(User.id)
         const post = new Post(usuarioMail,texto,temImg,imagem)
-        const newPost = await Client.Usuario.update({
-            where:{
-                id:User.id
-            },
-            Post:{
-                texto:post.texto,
-                usuario:User,
+        const newPost = await Client.Post.create({
+            data:{
+                texto:texto,
                 imagem:temImg,
-                conteudoImagem:imagem,
+                //conteudoImagem:imagem,
                 UsuarioId:User.id
             }
         })
