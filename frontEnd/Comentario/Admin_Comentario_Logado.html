@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <title>Comentarios Admin</title>
+</head>
+
+<body>
+    <nav class="menu green-bg">
+        <button class="logo"><img src="assets/img/Logo CJRlogo.svg" alt="Logo da CJR"></button>
+        <div class="login">
+            <h3>Admin</h3>
+            <a href="" class="a-img"><img class="img-person-bar" src="assets/img/shinji.jpg" alt="foto de perfil"></a>
+            <a href="" class="a-img"><img class="img-logOut" src="assets/img/log-out.svg" alt="icone de log-out"></a>
+        </div>
+    </nav>
+
+    <section class="main-content white-bg" id="areaPosts">
+
+        <div class="barra">
+            <p>Comentários
+        </div>
+
+        <div class="line"></div>
+
+        <div class="post white-blue-bg">
+            <div class="info-person">
+                <a class="a-img" href=""><img class="img-person" src="assets/img/shinji.jpg" alt="foto de perfil"></a>
+                <h3>joãozin gameplay</h3>
+                <p>7/11/2023</p>
+                <div class="trash">
+                    <a href="" class="a-img"><img src="assets/img/trash-2.svg" alt="icone de lixeira"></a>
+                </div>
+            </div>
+
+            <div class="text" id="text">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur recusandae soluta laborum
+                    voluptas, dolores fuga ad maiores impedit doloribus officia, totam molestiae deserunt explicabo enim
+                    nisi corporis amet harum voluptate.</p>
+            </div>
+
+            <div class="vector">
+                <button type="button" class="button-img" id="open-modal">
+                    <img src="assets/img/Vector.svg" alt="Ícone de editar">
+                </button>
+            </div>
+        </div>
+
+        <div class="line"></div>
+
+    </section>
+
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide white-blue-bg">
+        <div id="modal-body">
+            <textarea id="editorMarkdown"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button id="close-modal">Fechar</button>
+            <button id="postComment" onclick="enviarPost()">Publicar</button>
+        </div>
+    </div>
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js
+    "></script>
+
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

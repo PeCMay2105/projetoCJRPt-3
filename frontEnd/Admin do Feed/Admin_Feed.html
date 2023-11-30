@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="../Comentario/assets/css/style.css">
+    <link rel="stylesheet" href="../Comentario/assets/css/modal.css">
+    <title>Admininistração do feed</title>
+</head>
+
+<body>
+    <nav class="menu green-bg">
+        <button class="logo"><img src="../Comentario/assets/img/Logo CJRlogo.svg" alt="Logo da CJR"></button>
+        <div class="login">
+            <h3>Admin</h3>
+            <a href="" class="a-img"><img class="img-person-bar" src="../Comentario/assets/img/shinji.jpg"
+                    alt="foto de perfil"></a>
+            <a href="" class="a-img"><img class="img-logOut" src="../Comentario/assets/img/log-out.svg"
+                    alt="icone de log-out"></a>
+        </div>
+    </nav>
+
+    <section class="main-content white-bg" id="areaPosts">
+        <div class="barra">
+            <p>Publicações
+        </div>
+        <div class="line"></div>
+    </section>
+
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide white-blue-bg">
+        <div id="modal-body">
+            <textarea id="editorMarkdown"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button id="close-modal">Fechar</button>
+            <button id="postComment" onclick="enviarPost()">Publicar</button>
+        </div>
+    </div>
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js
+    "></script>
+
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="../Perfil/js/mainadminfeed.js"></script>
+</body>
+
+</html>
