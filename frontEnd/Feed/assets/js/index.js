@@ -1,4 +1,4 @@
-areaPosts = document.getElementById("areaPosts")
+ areaPosts = document.getElementById("areaPosts")
 
 posts = [
     {

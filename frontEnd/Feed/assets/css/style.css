@@ -1,5 +1,5 @@
 :root {
-    --gap: 3rem;
+    --gap: 3rem; 
     --primary-color: #001830;
     --secundary-color: #27BD80;
     --white-color: #EAEFF2;
@@ -27,6 +27,16 @@ a {
     text-decoration: none;
 }
 
+
+/*
+p {
+    margin-bottom: 3rem;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+}*/
+
 .logo {
     height: 4rem;
     width: 9rem;
@@ -34,7 +44,7 @@ a {
     border-radius: 0.8rem;
 }
 
-.logo img {
+.logo img{
     height: 3rem;
     width: 7rem;
 }
@@ -59,19 +69,11 @@ a {
     border-radius: 0.8rem;
 }
 
-.botao_editar_perfil,
-.botao_criar_post {
+.botao_comentar {
     height: 4rem;
     width: 12rem;
     border: none;
     border-radius: 1.5rem;
-    display: block;
-    margin-bottom: 10px;
-
-}
-
-.botao_editar_perfil {
-    margin-top: 100px;
 }
 
 .blue-bg {
@@ -91,12 +93,13 @@ a {
 
 .white-bg {
     background: var(--white-color);
-    color: var(--primary-color);
+    color: var(--primary-color); 
 }
 
 .main-content {
     max-width: 80rem;
     margin: 0 auto;
+    /*padding: 1rem var(--gap);*/
     min-height: 100vh;
 }
 
@@ -115,10 +118,10 @@ a {
 .barra {
     display: flex;
     justify-content: space-between;
+    /*border: 0.1rem solid black;*/
     align-items: center;
     padding: 2rem 2rem;
-    background: linear-gradient(to bottom, #002F67 45%, #ffffff -50%);
-
+    border-bottom: 0.1rem solid black;
 }
 
 .post {
@@ -133,8 +136,7 @@ a {
     gap: 1rem;
 }
 
-.info-person h3,
-.login h3 {
+.info-person h3, .login h3 {
     font-size: 1.5rem;
     color: var(--white-color);
 }
@@ -150,7 +152,7 @@ a {
     width: 58rem;
 }
 
-.img-person-bar {
+.img-person-bar{
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
@@ -173,13 +175,12 @@ a {
     z-index: 20;
 }
 
-.a-img img {
-    display: block;
-    /* Garante que a imagem não tenha espaços extras internos ou margens */
+.a-img img{
+    display: block; /* Garante que a imagem não tenha espaços extras internos ou margens */
 }
 
 .text {
-    padding: 0 7rem;
+    padding: 0 7rem; 
 }
 
 .comment {
@@ -194,82 +195,4 @@ a {
     cursor: pointer;
 }
 
-.perfil-info {
-    display: grid;
-    align-items: center;
-}
 
-.foto_usuario {
-    border-radius: 50%;
-    margin-right: 20px;
-    margin-top: 4vw;
-    height: 6rem;
-    width: 6rem; 
-
-}
-
-.detalhes-usu {
-    flex-direction: column;
-    margin-left: 5px;
-}
-
-.nome_usuario {
-    font-size: 25px;
-    color: #002F67;
-    margin-bottom: -20px;
-}
-
-.usuario-info {
-    flex-direction: column;
-    margin-top: 5px;
-}
-
-.icon-info {
-    display: flex;
-    align-items: center;
-    /* justify-content: flex-start; */
-    margin-bottom: -20px;
-
-}
-
-.icon1 {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    margin-bottom: -30px;
-
-}
-
-.icon2 {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    margin-bottom: -18px;
-
-}
-
-.linha1 {
-    margin-top: 0vh;
-    border: 1px solid #001830;
-    margin-bottom: 0vh;
-}
-
-.cargo {
-    font-size: 20px;
-    color: #002F67;
-    margin-bottom: -5px;
-    margin-top: 25px;
-
-}
-
-.email {
-    font-size: 20px;
-    color: #002F67;
-    margin-bottom: 15px;
-    margin-top: 25px;
-}
-
-.publis {
-    margin-left: 1vw;
-    margin-bottom: -1vw;
-}

@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
+    <title>Feed</title>
 </head>
+
 <body>
-    <div class="header">
-        <div class="nomeLogo">
-            <img src="./assets/logoCjr2.png" class="logo">
+    <nav class="menu green-bg">
+        <button class="logo"><img src="assets/img/Logo CJRlogo.svg" alt="Logo da CJR"></button>
+        <div class="login">
+            <h3>joãozin gameplay</h3>
+            <a href="" class="a-img"><img class="img-person-bar" src="assets/img/shinji.jpg" alt="foto de perfil"></a>
+            <a href="" class="a-img"><img class="img-logOut" src="assets/img/log-out.svg" alt="icone de log-out"></a>
         </div>
-            <div class="NomeEFoto">
-                <h3 class="nome">Usuario</h3>
-                <img src="./assets/fotoDefault.png" class="foto">
-                <img src="./assets/sair.png" class="iconeSair">
-            </div>
-        <div class="sair"></div>
-    </div>
-      
-    <main>
-    <div class="painelDeFundo" id="areaPosts" >
+    </nav>
 
-        <div class="botoes">
-            <h1 src="./assets/publicacoes.png" class="publis">Publicações<h1>
-            <button src="./assets/criarPost.png" class="create">Criar post</button>
+    <section class="main-content white-bg" id="areaPosts">
+
+        <div class="barra">
+            <p>Publicações</p>
+
+            <button class="botao_comentar white-blue-bg">Criar Post</button>
         </div>
-        <hr width="100%" class="linha1">
 
-        <!-- <div class="post">
-            <div class="NomeEFoto">
-                <img src="./assets/fotoDefault.png" class="fotoPost">
-                <h3 class="nomePost">Usuario</h3>
-            </div>
-            <div class="box">    
-                <div class="text">
-                    <h2 class="texto"> algum texto etc aeagegeg</h2>
+        
 
-                    <p class="data">xx/xx/xxxx</p>
-                </div>
-                <div class="icones">
-                    <img class="comentario" src="./assets/balao-de-fala.png">
-                    <img class="editar" src="./assets/editar-texto.png">
-                </div>
-            </div>
-        </div> -->
+    </section>
+
+    <div id="fade" class="hide"></div>
+    <div id="modal" class="hide white-blue-bg">
+        <div id="modal-body">
+            <textarea id="editorMarkdown"></textarea>
+        </div>
+        <div class="modal-footer">
+            <button id="close-modal">Fechar</button>
+            <button id="postComment" onclick="enviarPost()">Publicar</button>
+        </div>
     </div>
-    
-    </main>
-    <script src="./js/main.js"></script>
+
+    <script src="
+    https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js
+    "></script>
+
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
+
 </html>
