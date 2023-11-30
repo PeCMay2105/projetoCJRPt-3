@@ -1,4 +1,4 @@
-import express from "express"
+
 import app from "../../backEnd/server/app.js"
 import { UsuarioController } from "./usuarioControllers.js"
 import { postControllers } from "./postsControllers.js"
@@ -34,5 +34,16 @@ app.post("/newComment",(req,res)=>{
         res.send(201).json(comment)
     }catch(error){
         console.log(error)
+    }
+})
+
+app.get("/posts",(req,res)=>{
+    const posts = req.body
+    try{
+        const getPosts = controladorDePost.retornaPosts()
+        res.send(201).json(getPosts)
+        return posts
+    }catch(e){
+        console.log(e)
     }
 })

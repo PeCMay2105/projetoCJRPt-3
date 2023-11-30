@@ -25,4 +25,7 @@ export class postControllers{
         })
         return newPost
     }
+    async retornaPosts(){
+        const posts = await Client.Post.select.findMany()
+    }
 }
