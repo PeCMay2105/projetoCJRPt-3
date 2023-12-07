@@ -1,11 +1,11 @@
-import PrismaClient from "@prisma/client"
+import {PrismaClient} from "@prisma/client"
 
 
 
 const Cliente = new PrismaClient()
 
 export class UsuarioController{
-    async criarUsuario(nome,email,senha,foto,bio,adm){
+    async criarUsuario(nome,email,senha,bio,adm){
         
             const user = await Cliente.Usuario.create({
                 data:{

@@ -28,21 +28,21 @@
             <input type="file" id="seletorDeArquivo" style="display: none;">
         </div>
         <!-- <img class="imgftologincadastro" src="assets\img\UserProfile.svg" alt="Foto de Login" width="220" height="170"> -->
-        <form>
+        <form id="meuFormulario">
             <div class="input-iconeCad">
-                <input type="text" placeholder="Email" required style="padding-left: 60px;">
+                <input id="Nome" type="text" placeholder="Nome" required style="padding-left: 60px;">
             </div>
             <div class="input-iconeCad">
-                <input type="password" placeholder="Senha" required style="padding-left: 60px;">
+                <input id="Email" type="text" placeholder="Email" required style="padding-left: 60px;">
             </div>
             <div class="input-iconeCad">
-                <input type="text" placeholder="Nome" required style="padding-left: 60px;">
+                <input id="Senha" type="password" placeholder="Senha" required style="padding-left: 60px;">
             </div>
             <div class="input-iconeCad">
-                <input type="text" placeholder="Gênero" required style="padding-left: 60px;">
+                <input id="Bio" type="text" placeholder="Bio" required style="padding-left: 60px;">
             </div>
             <div class="input-iconeCad">
-                <input type="text" placeholder="Cargo" required style="padding-left: 60px;">
+                <input id="Cargo" type="text" placeholder="Cargo" required style="padding-left: 60px;">
             </div>
             <div class="verificacao-conta">
                 <a class="esqueci-senha-link" href="#"> Já possui conta? Acesse aqui </a>
@@ -50,12 +50,13 @@
             <input type="submit" value="Cadastrar">
         </form>
     </div>
+    <div id="resultado"></div>
     <script src="
     https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js
     "></script>
 
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    <script src="../Cadastro/js/mainPerfil.js"></script>
+    <script src="./js/mainPerfil.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,11 @@
 
-import app from "../../backEnd/server/app.js"
+import app from "../server/app.js"
 import { UsuarioController } from "./usuarioControllers.js"
 import { postControllers } from "./postsControllers.js"
 import { comentarioControllers } from "./comentarioControllers.js"
+
+import cors from 'cors';
+app.use(cors());
 
 const controladorDeUsuario = new UsuarioController()
 const controladorDePost = new postControllers()
@@ -13,7 +16,9 @@ app.listen(3000,()=>{
 
 app.post("/novoUsuario",(req,res)=>{
     const {nome,email,senha,bio,adm} = req.body
-    const result = controladorDeUsuario.criarUsuario(nome,email,senha,foto,bio,adm)
+    let admin = false
+    console.log(req.body)
+    const result = controladorDeUsuario.criarUsuario(nome,email,senha,bio,admin)
     res.send(201).json(result)
 })
 

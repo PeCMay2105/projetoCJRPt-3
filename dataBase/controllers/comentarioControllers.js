@@ -1,4 +1,4 @@
-import { Post } from "../../backEnd/model/Post.js";
+import { Post }  from '../model/Post.js';
 import {PrismaClient} from "@prisma/client"
 
 const Client = new PrismaClient()
